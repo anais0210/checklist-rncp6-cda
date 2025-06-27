@@ -81,7 +81,7 @@ export class ExportManager {
             const checkbox = item.querySelector('input[type="checkbox"]');
             const description = item.querySelector('span:not(.demo-badge)');
             const badge = item.querySelector('.demo-badge');
-            const notes = item.querySelector('.notes-content textarea');
+            const notes = item.querySelector('label textarea');
             
             if (checkbox && description) {
                 const isChecked = checkbox.checked;

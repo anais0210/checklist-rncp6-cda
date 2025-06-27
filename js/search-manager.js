@@ -22,7 +22,7 @@ export class SearchManager {
 
         items.forEach(item => {
             const description = item.querySelector('span:not(.demo-badge)');
-            const notes = item.querySelector('.notes-content textarea');
+            const notes = item.querySelector('label textarea');
             
             if (description) {
                 const descriptionText = description.textContent.toLowerCase();
@@ -59,7 +59,6 @@ export class SearchManager {
         const visibleItems = document.querySelectorAll('.checklist li:not(.search-hidden)');
         const totalItems = document.querySelectorAll('.checklist li').length;
         
-        // Optionnel : afficher le nombre de résultats
         console.log(`Recherche "${query}" : ${visibleItems.length}/${totalItems} résultats`);
     }
 } 

@@ -12,7 +12,7 @@ export class NotesManager {
         });
 
         document.addEventListener('input', (e) => {
-            if (e.target.tagName === 'TEXTAREA' && e.target.closest('.notes-content')) {
+            if (e.target.tagName === 'TEXTAREA' && e.target.closest('label')) {
                 this.saveNotes();
             }
         });
@@ -30,9 +30,11 @@ export class NotesManager {
 
     saveNotes() {
         const notes = {};
-        document.querySelectorAll('.notes-content textarea').forEach(textarea => {
-            const id = textarea.closest('.notes-content').id;
-            notes[id] = textarea.value;
+        document.querySelectorAll('.checklist li label textarea').forEach(textarea => {
+            const checkbox = textarea.closest('label').querySelector('input[type="checkbox"]');
+            if (checkbox) {
+                notes[checkbox.id] = textarea.value;
+            }
         });
         localStorage.setItem('checklist-notes', JSON.stringify(notes));
     }
@@ -42,9 +44,12 @@ export class NotesManager {
         if (savedNotes) {
             const notes = JSON.parse(savedNotes);
             Object.entries(notes).forEach(([id, content]) => {
-                const textarea = document.querySelector(`#${id} textarea`);
-                if (textarea) {
-                    textarea.value = content;
+                const checkbox = document.getElementById(id);
+                if (checkbox) {
+                    const textarea = checkbox.closest('label').querySelector('textarea');
+                    if (textarea) {
+                        textarea.value = content;
+                    }
                 }
             });
         }

@@ -294,7 +294,6 @@ body {
     opacity: 0.1;
 }
 
-/* Responsive Design */
 @media (width <= 768px) {
     .header h1 {
         font-size: 2.25rem;
@@ -326,7 +325,6 @@ body {
     }
 }
 
-/* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -336,171 +334,11 @@ body {
     }
 }
 
-/* Contraste amélioré pour l'accessibilité */
 @media (prefers-contrast: more) {
     :root {
         --primary-color: #5B21B6;
         --text-color: #000;
         --border-color: #000;
-    }
-}
-
-/* Styles d'impression */
-@media print {
-    /* Réinitialisation des styles pour l'impression */
-
-    * {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    body {
-        font-size: 12pt;
-        line-height: 1.5;
-        margin: 0;
-        padding: 0;
-    }
-
-    .container {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* En-tête optimisé pour l'impression */
-
-    .header {
-        border-bottom: 2px solid #000;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-    }
-
-    .header h1 {
-        font-size: 18pt;
-        margin-bottom: 5px;
-    }
-
-    .header p {
-        font-size: 11pt;
-        margin-bottom: 0;
-    }
-
-    /* Styles des blocs pour l'impression */
-
-    .block {
-        break-inside: avoid;
-        page-break-inside: avoid;
-        margin-bottom: 20px;
-        border: 1px solid #000;
-        padding: 15px;
-    }
-
-    .block h2 {
-        font-size: 14pt;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #000;
-        padding-bottom: 5px;
-    }
-
-    /* Styles des sections pour l'impression */
-
-    .section {
-        break-inside: avoid;
-        page-break-inside: avoid;
-        margin-bottom: 15px;
-    }
-
-    .section h3 {
-        font-size: 12pt;
-        margin-bottom: 8px;
-    }
-
-    /* Styles de la checklist pour l'impression */
-
-    .checklist {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .checklist li {
-        margin-bottom: 8px;
-        display: flex;
-        align-items: flex-start;
-    }
-
-    .checklist label {
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    /* Style des cases à cocher pour l'impression */
-
-    .checklist input[type="checkbox"] {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        width: 14px;
-        height: 14px;
-        border: 1px solid #000;
-        margin-top: 3px;
-    }
-
-    .checklist input[type="checkbox"]:checked {
-        background-color: #000 !important;
-    }
-
-    .checklist span {
-        font-size: 11pt;
-        line-height: 1.4;
-    }
-
-    /* Pied de page pour l'impression */
-
-    .footer {
-        border-top: 1px solid #000;
-        margin-top: 20px;
-        padding-top: 10px;
-        font-size: 10pt;
-        text-align: center;
-    }
-
-    /* Suppression des éléments non nécessaires à l'impression */
-
-    .block:hover,
-    .checklist li:hover {
-        transform: none;
-        box-shadow: none;
-    }
-
-    /* Ajout d'une URL en bas de page */
-
-    .footer::after {
-        content: "https://checklist-rncp6-cda.vercel.app";
-        display: block;
-        margin-top: 5px;
-        font-size: 9pt;
-        color: #666;
-    }
-
-    .item {
-        page-break-inside: avoid;
-        margin-bottom: 1rem;
-    }
-
-    .item input[type="checkbox"] {
-        border: 2px solid #000;
-    }
-
-    .item label {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .item .description {
-        font-size: 12px;
-        color: #333;
     }
 }
 
@@ -533,7 +371,6 @@ body {
     border-color: transparent;
 }
 
-/* Style pour les éléments filtrés */
 .checklist li {
     transition: all 0.3s ease;
     margin-bottom: 1rem;
@@ -543,7 +380,6 @@ body {
     display: none;
 }
 
-/* Barre de progression fixe */
 .progress-sticky {
     position: sticky;
     top: 0;
@@ -587,7 +423,6 @@ body {
     color: #333;
 }
 
-/* Boutons d'export/import */
 .export-import-container {
     display: flex;
     gap: 10px;
@@ -595,7 +430,7 @@ body {
     margin: 10px 0;
 }
 
-.export-btn, .import-btn {
+.export-btn {
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
@@ -611,7 +446,7 @@ body {
     text-align: center;
 }
 
-.export-btn:hover, .import-btn:hover {
+.export-btn:hover {
     background-color: #45a049;
 }
 
@@ -655,69 +490,11 @@ main {
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
 }
 
-/* Styles pour l'export PDF */
-.pdf-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border-bottom: 2px solid #333;
-}
-
-.pdf-header h1 {
-    font-size: 24px;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.pdf-header p {
-    font-size: 14px;
-    color: #666;
-    margin: 0.25rem 0;
-}
-
-/* Amélioration de l'accessibilité pour le PDF */
-@media print {
-    .item {
-        page-break-inside: avoid;
-        margin-bottom: 1rem;
-    }
-
-    .item input[type="checkbox"] {
-        border: 2px solid #000;
-    }
-
-    .item label {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .item .description {
-        font-size: 12px;
-        color: #333;
-    }
-}
-
-/* Styles pour les notes */
 .notes-container {
     margin-top: 8px;
     margin-left: 30px;
 }
 
-.notes-toggle {
-    background: none;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 4px 8px;
-    font-size: 0.8em;
-    cursor: pointer;
-    color: #666;
-    transition: all 0.3s ease;
-}
-
-.notes-toggle:hover {
-    background: #f5f5f5;
-    border-color: #999;
-}
 
 .notes-content {
     display: none;
@@ -733,7 +510,7 @@ main {
     min-height: 60px;
     padding: 8px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 25px;
     font-family: inherit;
     font-size: 0.9em;
     resize: vertical;
@@ -745,7 +522,6 @@ main {
     box-shadow: 0 0 0 2px rgb(99 102 241 / 20%);
 }
 
-/* Styles pour la recherche */
 .search-container {
     margin-bottom: 1rem;
 }
@@ -792,14 +568,13 @@ main {
     color: #666;
 }
 
-/* Styles pour les résultats de recherche */
 .checklist li.search-hidden {
     display: none;
 }
 
 .checklist li.search-highlight {
-    background: linear-gradient(90deg, rgb(255 255 0 / 20%), rgb(255 255 0 / 10%));
-    border-left: 4px solid #ffd700;
+    background: linear-gradient(90deg, #FDF4FF,  #FDF4FF);
+    border-left: 4px solid #FDF4FF;
     padding-left: 8px;
     border-radius: 4px;
     transition: all 0.3s ease;
@@ -847,16 +622,4 @@ main {
     font-size: 0.8em;
     font-weight: 600;
     color: #666;
-}
-
-/* Responsive pour les graphiques */
-@media (max-width: 768px) {
-    .charts-container {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .chart-item h4 {
-        font-size: 0.8em;
-    }
 }

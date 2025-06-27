@@ -1,6 +1,8 @@
 import { ProgressManager } from './progress.js';
 import { ExportManager } from './export.js';
 import { FilterManager } from './filters.js';
+import { NotesManager } from './notes-manager.js';
+import { SearchManager } from './search-manager.js';
 
 class App {
     constructor() {
@@ -8,6 +10,8 @@ class App {
         this.progressManager = new ProgressManager();
         this.exportManager = new ExportManager();
         this.filterManager = new FilterManager();
+        this.notesManager = new NotesManager();
+        this.searchManager = new SearchManager();
         this.loadVersion();
         
         document.addEventListener('checklist-updated', () => {

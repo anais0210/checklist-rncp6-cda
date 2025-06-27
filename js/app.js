@@ -3,6 +3,7 @@ import { ExportManager } from './export.js';
 import { FilterManager } from './filters.js';
 import { NotesManager } from './notes-manager.js';
 import { SearchManager } from './search-manager.js';
+import { ResetManager } from './reset-manager.js';
 
 class App {
     constructor() {
@@ -12,7 +13,10 @@ class App {
         this.filterManager = new FilterManager();
         this.notesManager = new NotesManager();
         this.searchManager = new SearchManager();
+        this.resetManager = new ResetManager();
         this.loadVersion();
+        
+        window.app = this;
         
         document.addEventListener('checklist-updated', () => {
             this.progressManager.updateProgress();

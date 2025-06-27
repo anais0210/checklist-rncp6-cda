@@ -430,24 +430,32 @@ body {
     margin: 10px 0;
 }
 
-.export-btn {
+.export-btn, .import-btn, .reset-btn {
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
-    color: #fff;
     cursor: pointer;
     font-size: 0.9em;
     transition: background-color 0.3s ease;
 }
 
-.import-btn {
-    display: inline-block;
-    text-align: center;
+.export-btn {
+    background-color: #4CAF50;
+    color: #fff;
 }
+
+.reset-btn {
+    background-color: #f44336;
+    color: #fff;
+}
+
 
 .export-btn:hover {
     background-color: #45a049;
+}
+
+.reset-btn:hover {
+    background-color: #d32f2f;
 }
 
 main {

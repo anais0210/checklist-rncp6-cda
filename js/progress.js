@@ -41,13 +41,11 @@ export class ProgressManager {
         document.getElementById('progress-fill').style.width = `${percentage}%`;
         document.getElementById('progress-text').textContent = `${percentage}%`;
 
-        // Mise à jour des pourcentages par démo
         for (let i = 1; i <= 4; i++) {
             const demoPercentage = this.calculateProgressByBadge(`Démo ${i}`);
             document.getElementById(`demo${i}-text`).textContent = `${demoPercentage}%`;
         }
 
-        // Mise à jour des pourcentages pour Dossier et Optionnel
         const dossierPercentage = this.calculateProgressByBadge('Dossier projet');
         const optionnelPercentage = this.calculateProgressByBadge('Optionnel');
 

@@ -28,7 +28,7 @@
           couvre bien l'ensemble des compétences évaluées pour l'obtention du
           titre RNCP.
         </p>
-        <p>
+        <p class="description-bold">
           Hors page de garde, sommaire et annexes, le dossier projet comporte entre 40 et 60 pages au maximum, schémas et illustrations compris. Les annexes comportent 40 pages au maximum.
         </p>
         <small class="version-tag" id="version-number"></small>
@@ -43,9 +43,11 @@
       <button class="filter-btn" data-filter="demo4">Démo 4</button>
       <button class="filter-btn" data-filter="dossier">Dossier projet</button>
       <button class="filter-btn" data-filter="optionnel">Optionnel</button>
+      <div class="export-import-container">
+        <button class="export-btn">Exporter en Excel</button>
+      </div>
     </div>
 
-    <!-- Barre de progression et boutons d'export -->
     <div class="progress-sticky">
       <div class="container">
         <div class="progress-container">
@@ -54,7 +56,7 @@
           </div>
           <span id="progress-text">0%</span>
         </div>
-
+  
         <div class="demo-progress">
           <div class="demo-progress-item">
             <span class="demo-badge-progress">Démo 1: <span id="demo1-text">0%</span></span>
@@ -74,10 +76,6 @@
           <div class="demo-progress-item">
             <span class="demo-badge-progress">Optionnel: <span id="optionnel-text">0%</span></span>
           </div>
-        </div>
-
-        <div class="export-import-container">
-          <button class="export-btn">Exporter en Excel</button>
         </div>
       </div>
     </div>

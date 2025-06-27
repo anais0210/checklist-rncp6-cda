@@ -4,6 +4,7 @@ import { FilterManager } from './filters.js';
 import { NotesManager } from './notes-manager.js';
 import { SearchManager } from './search-manager.js';
 import { ResetManager } from './reset-manager.js';
+import { ProjectNameManager } from './project-name-manager.js';
 
 class App {
     constructor() {
@@ -14,6 +15,7 @@ class App {
         this.notesManager = new NotesManager();
         this.searchManager = new SearchManager();
         this.resetManager = new ResetManager();
+        this.projectNameManager = new ProjectNameManager();
         this.loadVersion();
         
         window.app = this;

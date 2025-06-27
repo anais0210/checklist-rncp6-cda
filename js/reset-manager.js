@@ -39,8 +39,14 @@ export class ResetManager {
             textarea.value = '';
         });
 
+        const projectNameInput = document.getElementById('project-name');
+        if (projectNameInput) {
+            projectNameInput.value = '';
+        }
+
         localStorage.removeItem('checklist-progress');
         localStorage.removeItem('checklist-notes');
+        localStorage.removeItem('checklist-project-name');
 
         this.updateProgress();
 

@@ -17,7 +17,11 @@ export class ExportManager {
             const versionElement = document.getElementById('version-number');
             const version = versionElement ? versionElement.textContent : '';
             
-            const data = this.prepareExcelData();
+            const projectNameManager = window.app?.projectNameManager;
+            const projectName = projectNameManager ? projectNameManager.getProjectName() : '';
+            const formattedProjectName = projectNameManager ? projectNameManager.getFormattedProjectName() : '';
+            
+            const data = this.prepareExcelData(projectName);
             
             const wb = XLSX.utils.book_new();
             
@@ -33,7 +37,13 @@ export class ExportManager {
             
             XLSX.utils.book_append_sheet(wb, ws, 'Checklist CDA');
             
-            const fileName = `checklist-cda-${new Date().toISOString().split('T')[0]}.xlsx`;
+            const date = new Date().toISOString().split('T')[0];
+            let fileName = `checklist-cda-${date}.xlsx`;
+            
+            if (formattedProjectName) {
+                fileName = `checklist-${formattedProjectName}-${date}.xlsx`;
+            }
+            
             XLSX.writeFile(wb, fileName);
             
             console.log('Export Excel terminé avec succès');
@@ -43,7 +53,7 @@ export class ExportManager {
         }
     }
 
-    prepareExcelData() {
+    prepareExcelData(projectName = '') {
         const data = [];
         
         data.push([
@@ -57,9 +67,14 @@ export class ExportManager {
         
         const versionElement = document.getElementById('version-number');
         const version = versionElement ? versionElement.textContent : '';
+        
+        const headerTitle = projectName 
+            ? `Checklist CDA 6 - ${projectName} - ${version}`
+            : `Checklist CDA 6 - ${version}`;
+            
         data.push([
             '',
-            `Checklist CDA 6 - ${version}`,
+            headerTitle,
             '',
             '',
             '',

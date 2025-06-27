@@ -48,6 +48,13 @@
       </div>
     </div>
 
+    <div class="search-container container">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder=" Rechercher dans les descriptions..." />
+        <button id="clear-search" class="clear-search-btn">✕</button>
+      </div>
+    </div>
+
     <div class="progress-sticky">
       <div class="container">
         <div class="progress-container">
@@ -77,7 +84,7 @@
             <span class="demo-badge-progress">Optionnel: <span id="optionnel-text">0%</span></span>
           </div>
         </div>
-      </div>
+        </div>
     </div>
 
     <main class="container">
@@ -102,6 +109,12 @@
                 >
                 <span class="demo-badge">Démo 2</span>
               </label>
+              <div class="notes-container">
+                <button class="notes-toggle" data-target="env-dev-notes"> Notes</button>
+                <div class="notes-content" id="env-dev-notes">
+                  <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+                </div>
+              </div>
             </li>
             <li>
               <label for="choix-tech">
@@ -116,7 +129,14 @@
                   librairies, outils)</span
                 >
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
               </label>
+              <div class="notes-container">
+                <button class="notes-toggle" data-target="choix-tech-notes">📝 Notes</button>
+                <div class="notes-content" id="choix-tech-notes">
+                  <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+                </div>
+              </div>
             </li>
             <li>
               <label for="process-install">
@@ -131,7 +151,10 @@
                   Documentation Notion/Word/etc …)</span
                 >
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
+           
             </li>
           </ul>
         </div>
@@ -149,6 +172,8 @@
                 />
                 <span>Création d'une charte graphique</span>
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -161,6 +186,9 @@
                   />
                   <span>Charte graphique accessible</span>
                   <span class="demo-badge">Démo 1</span>
+                  <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
+                  
                 </label>
               </li>
               <li>
@@ -173,6 +201,8 @@
                 />
                 <span>Présentation des maquettes et wireframes</span>
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -185,6 +215,8 @@
                 />
                 <span>Explication des choix ergonomiques et d'UX/UI</span>
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -200,6 +232,8 @@
                   JavaScript, frameworks)</span
                 >
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -215,6 +249,8 @@
                   maquettes</span
                 >
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -230,6 +266,8 @@
                   label / zone cliquable etc …) sur maquettes</span
                 >
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -251,6 +289,8 @@
                   découpage fonctionnel, etc...)</span
                 >
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -263,6 +303,8 @@
                 />
                 <span>Patterns de conception implémentés (Singleton, Factory, Observer, Strategy, Adapter, Repository, MVC / MVVM / MVU,etc...)</span>
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -278,6 +320,8 @@
                   de les faire évoluer sans impacter le reste du projet …)</span
                 >
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -293,6 +337,8 @@
                   validation des entrées …)</span
                 >
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -314,6 +360,8 @@
                   shape up, cycle en V …)</span
                 >
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -326,6 +374,8 @@
                 />
                 <span>Planification et suivi des tâches</span>
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -338,6 +388,8 @@
                 />
                 <span>Gestion des versions (Git ou autre)</span>
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -350,6 +402,8 @@
                 />
                 <span>Collaboration et communication au sein de l'équipe (Trello, Notion, Asana, Word, Slack, etc ...)</span>
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -375,6 +429,8 @@
                 />
                 <span>Analyse des besoins fonctionnels et techniques</span>
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -387,6 +443,8 @@
                 />
                 <span>Cahier des charges et spécifications</span>
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -405,6 +463,8 @@
                 />
                 <span>Description de l'architecture logicielle utilisée</span>
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -417,6 +477,8 @@
                 />
                 <span>Aspects de sécurité dans l'architecture</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -435,6 +497,8 @@
                 />
                 <span>Optimisation et indexation</span>
                 <span class="demo-badge">Optionnel</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -447,6 +511,8 @@
                 />
                 <span>Sécurité et protection des données</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -467,6 +533,8 @@
                   >Utilisation d'un ORM, explication de l'utilisation et implémentation</span
                 >
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -479,6 +547,8 @@
                 />
                 <span>Gestion des requêtes et transactions</span>
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -491,6 +561,8 @@
                 />
                 <span>Mise en cache et optimisation des performances</span>
                 <span class="demo-badge">Optionnel</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -509,6 +581,8 @@
                 />
                 <span>Documentation technique de l'API (Uniquement si votre projet est une API)</span>
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -521,6 +595,8 @@
                 />
                 <span>Documentation du code source</span>
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -533,6 +609,8 @@
                 />
                 <span>Documentation de déploiement</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -551,6 +629,8 @@
                 />
                 <span>Environnement de test</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -563,6 +643,8 @@
                 />
                 <span>Configuration et paramètres ( dev - test - prod optionnel )</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -575,6 +657,8 @@
                 />
                 <span>Sécurité du déploiement (Variables d'environnement, Accès SSH, Principe de moindre privilège, HTTPS en production, etc ...)</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -599,6 +683,8 @@
                 />
                 <span>Stratégie de tests (unitaires, intégration, e2e)</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -611,6 +697,8 @@
                 />
                 <span>Plans de tests réalisés</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -623,6 +711,8 @@
                 />
                 <span>Outils et frameworks de tests utilisés</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -635,6 +725,8 @@
                 />
                 <span>Résultats des tests et corrections apportées</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -647,6 +739,8 @@
                 />
                 <span>Tests de sécurité</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -660,6 +754,8 @@
                 <input type="checkbox" id="doc-tech" aria-label="Documentation technique" />
                 <span>Documentation technique</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -667,6 +763,8 @@
                 <input type="checkbox" id="doc-user" aria-label="Documentation utilisateur" />
                 <span>Documentation utilisateur/utilisatrices</span>
                 <span class="demo-badge">Optionnel</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -674,6 +772,8 @@
                 <input type="checkbox" id="strat-deploiement" aria-label="Stratégie de déploiement" />
                 <span>Stratégie de déploiement</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -685,6 +785,8 @@
                 />
                 <span>Configuration des environnements</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -692,6 +794,8 @@
                 <input type="checkbox" id="proc-sauvegarde" aria-label="Procédures de sauvegarde" />
                 <span>Procédures de sauvegarde et de restauration</span>
                 <span class="demo-badge"> Optionnel </span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -710,6 +814,8 @@
                 />
                 <span>Intégration continue / Déploiement continu (CI/CD)</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -722,6 +828,8 @@
                 />
                 <span>Automatisation des processus (Lancer les tests à chaque push, Dependabot, Déployer sur un serveur, Générer un changelog)</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -734,6 +842,8 @@
                 />
                 <span>Monitoring et alerting</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -746,6 +856,8 @@
                 />
                 <span>Gestion des versions et des releases</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -758,6 +870,8 @@
                 />
                 <span>Sécurisation du pipeline de déploiement</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -780,6 +894,8 @@
                 />
                 <span>Respect des standards de code</span>
                 <span class="demo-badge">Dossier projet</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -792,6 +908,8 @@
                 />
                 <span>Gestion des erreurs et exceptions</span>
                 <span class="demo-badge">Dossier projet</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -806,6 +924,8 @@
                   >Protection contre les vulnérabilités courantes (OWASP)</span
                 >
                 <span class="demo-badge">Dossier projet</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -818,6 +938,8 @@
                 />
                 <span>Journalisation et audit</span>
                 <span class="demo-badge">Optionnel</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -836,6 +958,8 @@
                 />
                 <span>Clarté et structure du rapport</span>
                 <span class="demo-badge">Dossier projet</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -851,6 +975,8 @@
                   diagrammes)</span
                 >
                 <span class="demo-badge">Dossier projet</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -863,6 +989,8 @@
                 />
                 <span>Glossaire des termes techniques</span>
                 <span class="demo-badge">Dossier projet</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -875,6 +1003,8 @@
                 />
                 <span>Démonstration fonctionnelle prévue ou vidéo</span>
                 <span class="demo-badge">Démo 4</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -893,6 +1023,8 @@
                 />
                 <span>Inclure un résumé en anglais</span>
                 <span class="demo-badge">Dossier projet</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -914,6 +1046,8 @@
                   (client/clientes - dev - produit …)</span
                 >
                 <span class="demo-badge">Optionnel</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -932,6 +1066,8 @@
                 />
                 <span>Organisation en couches de l'application</span>
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -947,6 +1083,8 @@
                   soap, graphql etc … format json, xml etc …)</span
                 >
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -965,6 +1103,8 @@
                 />
                 <span>Modèle conceptuel de données (MCD)</span>
                 <span class="demo-badge">Démo 1</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -977,6 +1117,8 @@
                 />
                 <span>Modèle physique de données (MPD)</span>
                 <span class="demo-badge">Optionnel</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -989,6 +1131,8 @@
                 />
                 <span>Modèle logique de données (MLD)</span>
                 <span class="demo-badge">Optionnel</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -1001,6 +1145,8 @@
                 />
                 <span>Scripts de création de la base de données</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -1013,6 +1159,8 @@
                 />
                 <span>Sécurisation des accès à la base de données</span>
                 <span class="demo-badge">Démo 3</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>
@@ -1033,6 +1181,8 @@
                   >Stratégie d'accès aux données (ORM, DAO, Repository)</span
                 >
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -1045,6 +1195,8 @@
                 />
                 <span>Implémentation des requêtes SQL</span>
                 <span class="demo-badge">Démo 2</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
             <li>
@@ -1057,6 +1209,8 @@
                 />
                 <span>Intégration de bases NoSQL</span>
                 <span class="demo-badge">Optionnel</span>
+                <textarea placeholder="Ajoutez vos notes, liens, références..."></textarea>
+
               </label>
             </li>
           </ul>

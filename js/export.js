@@ -51,7 +51,8 @@ export class ExportManager {
             'Description',
             'Badge',
             'Bloc',
-            'Section'
+            'Section',
+            'Notes'
         ]);
         
         const versionElement = document.getElementById('version-number');
@@ -61,11 +62,13 @@ export class ExportManager {
             `Checklist CDA 6 - ${version}`,
             '',
             '',
+            '',
             ''
         ]);
         data.push([
             '',
             `Date d'export : ${new Date().toLocaleDateString('fr-FR')}`,
+            '',
             '',
             '',
             ''
@@ -78,11 +81,13 @@ export class ExportManager {
             const checkbox = item.querySelector('input[type="checkbox"]');
             const description = item.querySelector('span:not(.demo-badge)');
             const badge = item.querySelector('.demo-badge');
+            const notes = item.querySelector('.notes-content textarea');
             
             if (checkbox && description) {
                 const isChecked = checkbox.checked;
                 const descriptionText = description.textContent.trim();
                 const badgeText = badge ? badge.textContent.trim() : '';
+                const notesText = notes ? notes.value.trim() : '';
                 
                 const block = item.closest('.block');
                 const section = item.closest('.section');
@@ -95,7 +100,8 @@ export class ExportManager {
                     descriptionText,
                     badgeText,
                     blockTitle,
-                    sectionTitle
+                    sectionTitle,
+                    notesText
                 ]);
             }
         });

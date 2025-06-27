@@ -4,6 +4,7 @@ import { FilterManager } from './filters.js';
 
 class App {
     constructor() {
+        console.log('App initialisée');
         this.progressManager = new ProgressManager();
         this.exportManager = new ExportManager();
         this.filterManager = new FilterManager();
@@ -29,5 +30,6 @@ class App {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM chargé, initialisation de l\'app');
     new App();
 }); 

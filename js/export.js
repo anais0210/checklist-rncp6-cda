@@ -1,8 +1,5 @@
-import { VersionManager } from './version-manager.js';
-
 export class ExportManager {
     constructor() {
-        this.versionManager = new VersionManager();
         this.init();
     }
 

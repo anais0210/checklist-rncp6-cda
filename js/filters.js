@@ -24,7 +24,7 @@ export class FilterManager {
 
                 if (filter.startsWith('demo')) {
                     const demoNumber = filter.replace('demo', '');
-                    isVisible = badgeText === `Démo ${demoNumber}`;
+                    isVisible = badgeText.replace(/\s+/g, '').toLowerCase() === `démo${demoNumber}`.toLowerCase();
                 } else if (filter === 'dossier') {
                     isVisible = badgeText === 'Dossier projet';
                 } else {

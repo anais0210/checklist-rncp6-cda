@@ -564,10 +564,7 @@ main {
 .demo-progress {
     display: flex;
     justify-content: space-between;
-    margin: 15px 0;
     padding: 10px 0;
-    border-top: 1px solid rgb(255 255 255 / 10%);
-    border-bottom: 1px solid rgb(255 255 255 / 10%);
 }
 
 .demo-progress-item {

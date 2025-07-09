@@ -533,6 +533,17 @@ body {
     background-color: #d32f2f;
 }
 
+.export-btn,
+.reset-btn {
+    padding: 16px 32px;
+    font-size: 1.15em;
+    min-width: 180px;
+    min-height: 48px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
 main {
     padding-top: 20px;
 }

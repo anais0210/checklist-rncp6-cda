@@ -89,7 +89,7 @@ body {
     margin: 0 auto 20px;
     max-width: 800px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
     display: flex;
     align-items: center;
     gap: 15px;
@@ -101,21 +101,21 @@ body {
     font-weight: 600;
     font-size: 1.1em;
     white-space: nowrap;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
 }
 
 .project-name-input {
     flex: 1;
     min-width: 300px;
     padding: 12px 16px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgb(255 255 255 / 30%);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgb(255 255 255 / 95%);
     color: #333;
     font-size: 1rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
 
 .project-name-input::placeholder {
@@ -127,18 +127,18 @@ body {
     outline: none;
     border-color: #fff;
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0 3px rgb(255 255 255 / 30%), 0 4px 12px rgb(0 0 0 / 15%);
     transform: translateY(-1px);
 }
 
 .project-name-input:hover {
-    border-color: rgba(255, 255, 255, 0.6);
+    border-color: rgb(255 255 255 / 60%);
     background: #fff;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .project-name-container {
         margin: 10px 15px 15px;
         padding: 15px;
@@ -717,5 +717,107 @@ main {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+@media (max-width: 768px) {
+    .progress-sticky {
+        max-width: 100%;
+        padding: 8px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .progress-container {
+        padding: 10px;
+    }
+    .demo-progress {
+        flex-direction: column;
+        gap: 6px;
+        padding: 0;
+    }
+    .demo-progress-item {
+        padding: 0;
+        font-size: 0.95em;
+    }
+    .charts-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 5px;
+    max-width: 100vw;
+  }
+  main.container {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-start;
+  }
+  .filter-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 768px) {
+  .checklist li {
+    margin-bottom: 0.7rem;
+    font-size: 0.98em;
+  }
+  .notes-container {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .demo-progress {
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+    align-items: flex-start;
+  }
+  .demo-progress-item {
+    width: 100%;
+    padding: 0;
+    font-size: 0.98em;
+    box-sizing: border-box;
+    word-break: break-word;
+  }
+  .demo-badge-progress {
+    display: block;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 768px) {
+  .checklist li {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .checklist label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .notes-container,
+  .checklist label textarea,
+  .checklist label input[type="text"] {
+    width: 100%;
+    margin-top: 8px;
+    min-width: 0;
+    box-sizing: border-box;
+  }
 }
 

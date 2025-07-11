@@ -515,7 +515,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9em;
-    transition: #fff 0.3s ease;
 }
 
 .export-btn {
@@ -529,14 +528,6 @@ body {
 }
 
 
-.export-btn:hover {
-    background-color: #8836f4;
-}
-
-.reset-btn:hover {
-    background-color: rgb(175 76 149);
-}
-
 .export-btn,
 .reset-btn {
     padding: 16px 32px;
@@ -546,6 +537,14 @@ body {
     border-radius: 8px;
     font-weight: 600;
     letter-spacing: 0.5px;
+}
+
+.export-btn:hover {
+    background-color: #8836f4;
+}
+
+.reset-btn:hover {
+    background-color: rgb(175 76 149);
 }
 
 main {
@@ -809,7 +808,7 @@ main {
     padding: 0;
     font-size: 0.98em;
     box-sizing: border-box;
-    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .demo-badge-progress {

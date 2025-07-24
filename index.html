@@ -15,6 +15,7 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script type="module" src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
   </head>
   <body>
     <header class="header">
@@ -1211,10 +1212,18 @@
         </div>
       </section>
     </main>
-    <footer>
-      <div class="export-import-container">
-        <button class="export-btn">Exporter en Excel</button>
-        <button class="reset-btn" id="reset-all-btn">Tout réinitialiser</button>
+    <footer class="footer">
+      <nav class="footer-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active">🏠 Checklist</a></li>
+          <li><a href="questions.html">❓ Questions d'aide</a></li>
+        </ul>
+      </nav>
+      <div class="footer-content">
+        <div class="export-import-container">
+          <button class="export-btn">Exporter en Excel</button>
+          <button class="reset-btn" id="reset-all-btn">Tout réinitialiser</button>
+        </div>
       </div>
     </footer>
   </body>

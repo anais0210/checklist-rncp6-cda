@@ -23,11 +23,11 @@ export class SearchManager {
         items.forEach(item => {
             const description = item.querySelector('span:not(.demo-badge)');
             const notes = item.querySelector('label textarea');
-            
+
             if (description) {
                 const descriptionText = description.textContent.toLowerCase();
                 const notesText = notes ? notes.value.toLowerCase() : '';
-                const hasMatch = descriptionText.includes(normalizedQuery) || 
+                const hasMatch = descriptionText.includes(normalizedQuery) ||
                                 notesText.includes(normalizedQuery);
 
                 if (normalizedQuery === '' || hasMatch) {
@@ -56,9 +56,16 @@ export class SearchManager {
     }
 
     updateSearchResults(query) {
+        const countEl = document.getElementById('search-results-count');
+        if (!countEl) return;
+
+        if (!query || query.trim() === '') {
+            countEl.textContent = '';
+            return;
+        }
+
         const visibleItems = document.querySelectorAll('.checklist li:not(.search-hidden)');
         const totalItems = document.querySelectorAll('.checklist li').length;
-        
-        console.log(`Recherche "${query}" : ${visibleItems.length}/${totalItems} résultats`);
+        countEl.textContent = `${visibleItems.length} résultat${visibleItems.length !== 1 ? 's' : ''} sur ${totalItems}`;
     }
-} 
+}

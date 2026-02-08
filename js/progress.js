@@ -1,5 +1,6 @@
 export class ProgressManager {
     constructor() {
+        this.lastMilestone = 0;
         this.loadProgress();
         this.setupEventListeners();
     }
@@ -38,8 +39,14 @@ export class ProgressManager {
         const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
         const percentage = Math.round((checked / total) * 100);
 
-        document.getElementById('progress-fill').style.width = `${percentage}%`;
+        const ring = document.getElementById('progress-ring');
+        if (ring) {
+            ring.style.setProperty('--progress', percentage);
+        }
+
         document.getElementById('progress-text').textContent = `${percentage}%`;
+
+        this.checkMilestone(percentage);
 
         for (let i = 1; i <= 4; i++) {
             const demoPercentage = this.calculateProgressByBadge(`Démo ${i}`);
@@ -53,6 +60,20 @@ export class ProgressManager {
         document.getElementById('optionnel-text').textContent = `${optionnelPercentage}%`;
 
         document.dispatchEvent(new CustomEvent('checklist-updated'));
+    }
+
+    checkMilestone(percentage) {
+        const milestones = [25, 50, 75, 100];
+        const currentMilestone = milestones.filter(m => percentage >= m).pop() || 0;
+
+        if (currentMilestone > this.lastMilestone) {
+            const ring = document.getElementById('progress-ring');
+            if (ring) {
+                ring.classList.add('milestone');
+                setTimeout(() => ring.classList.remove('milestone'), 600);
+            }
+        }
+        this.lastMilestone = currentMilestone;
     }
 
     saveProgress() {
@@ -76,4 +97,4 @@ export class ProgressManager {
             this.updateProgress();
         }
     }
-} 
+}

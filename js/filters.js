@@ -7,11 +7,29 @@ export class FilterManager {
         document.querySelectorAll('.filter-btn').forEach(button => {
             button.addEventListener('click', () => this.filterItems(button.dataset.filter));
         });
+
+        const filterContainer = document.querySelector('.filters');
+        if (filterContainer) {
+            filterContainer.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    const buttons = [...filterContainer.querySelectorAll('.filter-btn')];
+                    const currentIndex = buttons.indexOf(document.activeElement);
+                    if (currentIndex === -1) return;
+                    const nextIndex = e.key === 'ArrowRight'
+                        ? (currentIndex + 1) % buttons.length
+                        : (currentIndex - 1 + buttons.length) % buttons.length;
+                    buttons[nextIndex].focus();
+                    e.preventDefault();
+                }
+            });
+        }
     }
 
     filterItems(filter) {
         document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.filter === filter);
+            const isActive = btn.dataset.filter === filter;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
 
         document.querySelectorAll('.checklist li').forEach(item => {
@@ -35,4 +53,4 @@ export class FilterManager {
             }
         });
     }
-} 
+}

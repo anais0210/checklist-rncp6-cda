@@ -5,10 +5,10 @@ import { NotesManager } from './notes-manager.js';
 import { SearchManager } from './search-manager.js';
 import { ResetManager } from './reset-manager.js';
 import { ProjectNameManager } from './project-name-manager.js';
+import { SectionManager } from './section-manager.js';
 
 class App {
     constructor() {
-        console.log('App initialisée');
         this.progressManager = new ProgressManager();
         this.exportManager = new ExportManager();
         this.filterManager = new FilterManager();
@@ -16,12 +16,14 @@ class App {
         this.searchManager = new SearchManager();
         this.resetManager = new ResetManager();
         this.projectNameManager = new ProjectNameManager();
+        this.sectionManager = new SectionManager();
         this.loadVersion();
-        
+
         window.app = this;
-        
+
         document.addEventListener('checklist-updated', () => {
             this.progressManager.updateProgress();
+            this.sectionManager.updateAllCounts();
         });
     }
 
@@ -40,6 +42,5 @@ class App {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM chargé, initialisation de l\'app');
     new App();
-}); 
+});

@@ -8,13 +8,23 @@
     <script src="js/navigation.js"></script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <header class="header">
       <div class="container">
         <h1>Questions par critère</h1>
         <p class="subtitle">Questions d'aide pour compléter chaque section de votre checklist</p>
       </div>
     </header>
-    <main class="container">
+
+    <nav class="top-nav" aria-label="Navigation principale">
+      <ul class="nav-menu">
+        <li><a href="index.html">Checklist</a></li>
+        <li><a href="questions.html" class="active" aria-current="page">Questions d'aide</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-content" class="container">
 
       <section class="block">
         <h2>Installation et configuration de l'environnement</h2>
@@ -276,14 +286,8 @@
     </main>
     
     <footer class="footer">
-      <nav class="footer-nav">
-        <ul class="nav-menu">
-          <li><a href="index.html">🏠 Checklist</a></li>
-          <li><a href="questions.html" class="active">❓ Questions d'aide</a></li>
-        </ul>
-      </nav>
       <div class="footer-content">
-        <p style="margin: 0; opacity: 0.8;">Questions d'aide pour compléter votre checklist CDA</p>
+        <p style="margin: 0; color: var(--text-secondary);">Questions d'aide pour compléter votre checklist CDA</p>
       </div>
     </footer>
   </body>

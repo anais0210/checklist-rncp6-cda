@@ -21,11 +21,23 @@ class App {
         this.globalCommentManager = new GlobalCommentManager();
         this.loadVersion();
 
+        this.labelTextareas();
+
         window.app = this;
 
         document.addEventListener('checklist-updated', () => {
             this.progressManager.updateProgress();
             this.sectionManager.updateAllCounts();
+        });
+    }
+
+    labelTextareas() {
+        document.querySelectorAll('.checklist label textarea').forEach(textarea => {
+            const label = textarea.closest('label');
+            const span = label?.querySelector('span:not(.demo-badge)');
+            if (span) {
+                textarea.setAttribute('aria-label', `Notes pour : ${span.textContent.trim()}`);
+            }
         });
     }
 

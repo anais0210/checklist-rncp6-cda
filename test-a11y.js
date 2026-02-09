@@ -49,6 +49,11 @@ async function runA11yTests() {
         const page = await context.newPage();
         
         await page.goto('http://localhost:3000');
+        await page.waitForTimeout(1000);
+        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+        await page.waitForTimeout(500);
+        await page.evaluate(() => window.scrollTo(0, 0));
+        await page.waitForTimeout(500);
 
         const results = await new AxeBuilder({ page })
             .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
@@ -62,8 +67,10 @@ Règle: ${violation.id}
 Impact: ${violation.impact}
 Description: ${violation.description}
 Éléments concernés: ${violation.nodes.length}
-Aide: ${violation.help}
-                `);
+Aide: ${violation.help}`);
+                violation.nodes.forEach((node, i) => {
+                    console.error(`  [${i + 1}] ${node.target.join(' ')} — ${node.failureSummary}`);
+                });
             });
             process.exit(1);
         } else {

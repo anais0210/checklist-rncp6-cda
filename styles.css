@@ -3,27 +3,28 @@
  *
  * CONTRASTES (WCAG AA : 4.5:1 texte normal, 3:1 grand texte)
  * --text-color (#1E293B) sur --bg-color (#F8FAFC) : 13.5:1 (AAA)
- * --text-secondary (#64748B) sur --surface (#FFF) : 4.63:1 (AA)
- * --primary-hover (#D4402A) sur --surface (#FFF) : 5.0:1 (AA)
- * --accent (#C0392B) sur --surface (#FFF) : 5.7:1 (AA)
+ * --text-secondary (#475569) sur --surface (#FFF) : 7.0:1 (AAA)
+ * --text-muted (#64748B) sur --surface (#FFF) : 5.0:1 (AA)
+ * --primary (#C0392B) sur --surface (#FFF) : 5.5:1 (AA)
+ * --accent (#922B21) sur --surface (#FFF) : 7.8:1 (AAA)
  * Badges : texte fonce sur fond clair, tous > 4.5:1
  */
 
 :root {
     /* Primary - Ada Tech School */
-    --primary: #E74C34;
-    --primary-hover: #D4402A;
-    --primary-light: #FDD8D0;
+    --primary: #C0392B;
+    --primary-hover: #A93226;
+    --primary-light: #FEF0EC;
     --primary-subtle: #FEF2EF;
 
     /* Accent */
-    --accent: #C0392B;
+    --accent: #922B21;
     --accent-light: #FADBD8;
 
     /* Neutrals */
     --text-color: #1E293B;
-    --text-secondary: #64748B;
-    --text-muted: #94A3B8;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
     --bg-color: #F8FAFC;
     --surface: #FFF;
     --border-color: #E2E8F0;
@@ -37,20 +38,20 @@
     --shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 7%), 0 2px 4px -2px rgb(0 0 0 / 5%);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 8%), 0 4px 6px -4px rgb(0 0 0 / 5%);
-    --shadow-focus: 0 0 0 3px rgb(231 76 52 / 25%);
+    --shadow-focus: 0 0 0 3px rgb(192 57 43 / 25%);
 
     /* Badge colors */
-    --badge-demo1: #C0392B;
+    --badge-demo1: #7F1D1D;
     --badge-demo1-bg: #FDD8D0;
-    --badge-demo2: #4338CA;
+    --badge-demo2: #312E81;
     --badge-demo2-bg: #E0E7FF;
-    --badge-demo3: #7C3AED;
+    --badge-demo3: #5B21B6;
     --badge-demo3-bg: #EDE9FE;
-    --badge-demo4: #1D4ED8;
+    --badge-demo4: #1E3A8A;
     --badge-demo4-bg: #DBEAFE;
-    --badge-dossier: #B45309;
+    --badge-dossier: #92400E;
     --badge-dossier-bg: #FEF3C7;
-    --badge-optionnel: #475569;
+    --badge-optionnel: #334155;
     --badge-optionnel-bg: #F1F5F9;
 
     /* Typography */
@@ -1438,11 +1439,12 @@ details.section[open] > .checklist {
 
 @media (prefers-contrast: more) {
     :root {
-        --primary: #A93226;
-        --primary-hover: #922B21;
-        --accent: #922B21;
+        --primary: #7F1D1D;
+        --primary-hover: #691A1A;
+        --accent: #691A1A;
         --text-color: #000;
-        --text-secondary: #334155;
+        --text-secondary: #1E293B;
+        --text-muted: #334155;
         --border-color: #475569;
         --bg-color: #fff;
     }

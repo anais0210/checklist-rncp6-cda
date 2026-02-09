@@ -542,6 +542,7 @@ body {
     background-color: var(--surface);
     border-bottom: 1px solid var(--border-color);
     padding: var(--space-3) var(--space-6);
+    margin-bottom: var(--space-6);
     box-shadow: var(--shadow-md);
     display: flex;
     align-items: center;

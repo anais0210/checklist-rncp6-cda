@@ -44,9 +44,15 @@ export class ResetManager {
             projectNameInput.value = '';
         }
 
+        const globalComment = document.getElementById('global-comment');
+        if (globalComment) {
+            globalComment.value = '';
+        }
+
         localStorage.removeItem('checklist-progress');
         localStorage.removeItem('checklist-notes');
         localStorage.removeItem('checklist-project-name');
+        localStorage.removeItem('checklist-global-comment');
 
         this.updateProgress();
 
@@ -69,17 +75,20 @@ export class ResetManager {
     showResetConfirmation() {
         const notification = document.createElement('div');
         notification.className = 'reset-notification';
+        notification.setAttribute('role', 'status');
+        notification.setAttribute('aria-live', 'polite');
+        notification.setAttribute('aria-atomic', 'true');
         notification.innerHTML = `
             <div class="reset-notification-content">
                 <span>Checklist réinitialisée avec succès !</span>
             </div>
         `;
-        
+
         notification.style.cssText = `
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #4CAF50;
+            background: #2E7D32;
             color: white;
             padding: 15px 20px;
             border-radius: 8px;

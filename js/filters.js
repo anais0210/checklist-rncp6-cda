@@ -29,7 +29,7 @@ export class FilterManager {
         document.querySelectorAll('.filter-btn').forEach(btn => {
             const isActive = btn.dataset.filter === filter;
             btn.classList.toggle('active', isActive);
-            btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
         });
 
         document.querySelectorAll('.checklist li').forEach(item => {

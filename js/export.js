@@ -29,6 +29,7 @@ export class ExportManager {
             if (exportBtn) {
                 exportBtn.textContent = 'Chargement...';
                 exportBtn.disabled = true;
+                exportBtn.setAttribute('aria-busy', 'true');
             }
 
             await this.loadXLSX();
@@ -40,7 +41,10 @@ export class ExportManager {
             const projectName = projectNameManager ? projectNameManager.getProjectName() : '';
             const formattedProjectName = projectNameManager ? projectNameManager.getFormattedProjectName() : '';
 
-            const data = this.prepareExcelData(projectName);
+            const globalCommentManager = window.app?.globalCommentManager;
+            const globalComment = globalCommentManager ? globalCommentManager.getGlobalComment() : '';
+
+            const data = this.prepareExcelData(projectName, globalComment);
 
             const wb = XLSX.utils.book_new();
 
@@ -71,11 +75,12 @@ export class ExportManager {
             if (exportBtn) {
                 exportBtn.textContent = 'Exporter en Excel';
                 exportBtn.disabled = false;
+                exportBtn.setAttribute('aria-busy', 'false');
             }
         }
     }
 
-    prepareExcelData(projectName = '') {
+    prepareExcelData(projectName = '', globalComment = '') {
         const data = [];
 
         data.push([
@@ -110,6 +115,19 @@ export class ExportManager {
             '',
             ''
         ]);
+
+        if (globalComment) {
+            data.push([]);
+            data.push([
+                '',
+                `Commentaire global : ${globalComment}`,
+                '',
+                '',
+                '',
+                ''
+            ]);
+        }
+
         data.push([]);
 
         const checklistItems = document.querySelectorAll('.checklist li');

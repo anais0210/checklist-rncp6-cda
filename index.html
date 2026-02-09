@@ -75,18 +75,28 @@
       />
     </div>
 
+    <div class="global-comment-container">
+      <label for="global-comment" class="global-comment-label">Commentaire global sur le projet :</label>
+      <textarea
+        id="global-comment"
+        class="global-comment-input"
+        placeholder="Ajoutez ici vos remarques générales, objectifs, contexte du projet..."
+        rows="3"
+      ></textarea>
+    </div>
+
     <div
       class="filters"
-      role="tablist"
+      role="group"
       aria-label="Filtrer par catégorie"
     >
-      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Tous</button>
-      <button class="filter-btn" data-filter="demo1" role="tab" aria-selected="false">Démo 1</button>
-      <button class="filter-btn" data-filter="demo2" role="tab" aria-selected="false">Démo 2</button>
-      <button class="filter-btn" data-filter="demo3" role="tab" aria-selected="false">Démo 3</button>
-      <button class="filter-btn" data-filter="demo4" role="tab" aria-selected="false">Démo 4</button>
-      <button class="filter-btn" data-filter="dossier" role="tab" aria-selected="false">Dossier projet</button>
-      <button class="filter-btn" data-filter="optionnel" role="tab" aria-selected="false">Optionnel</button>
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">Tous</button>
+      <button class="filter-btn" data-filter="demo1" aria-pressed="false">Démo 1</button>
+      <button class="filter-btn" data-filter="demo2" aria-pressed="false">Démo 2</button>
+      <button class="filter-btn" data-filter="demo3" aria-pressed="false">Démo 3</button>
+      <button class="filter-btn" data-filter="demo4" aria-pressed="false">Démo 4</button>
+      <button class="filter-btn" data-filter="dossier" aria-pressed="false">Dossier projet</button>
+      <button class="filter-btn" data-filter="optionnel" aria-pressed="false">Optionnel</button>
     </div>
 
     <div class="search-container container">
@@ -103,34 +113,40 @@
           aria-label="Effacer la recherche"
         >&#10005;</button>
       </div>
-      <div id="search-results-count" class="search-results-count" aria-live="polite"></div>
+      <div id="search-results-count" class="search-results-count" aria-live="polite" aria-atomic="true"></div>
     </div>
 
     <div class="progress-sticky">
       <div class="progress-container">
-        <div class="progress-ring" id="progress-ring" style="--progress: 0">
+        <div class="progress-ring" id="progress-ring" style="--progress: 0" role="img" aria-label="Progression globale">
           <span id="progress-text" aria-live="polite" aria-atomic="true">0%</span>
         </div>
       </div>
 
       <div class="demo-progress">
         <div class="demo-progress-item">
-          <span class="demo-badge-progress">Démo 1 : <span id="demo1-text">0%</span></span>
+          <span class="demo-badge-progress">Démo 1 <span id="demo1-text">0%</span></span>
+          <div class="demo-mini-bar" aria-hidden="true"><div class="demo-mini-fill" id="demo1-bar"></div></div>
         </div>
         <div class="demo-progress-item">
-          <span class="demo-badge-progress">Démo 2 : <span id="demo2-text">0%</span></span>
+          <span class="demo-badge-progress">Démo 2 <span id="demo2-text">0%</span></span>
+          <div class="demo-mini-bar" aria-hidden="true"><div class="demo-mini-fill" id="demo2-bar"></div></div>
         </div>
         <div class="demo-progress-item">
-          <span class="demo-badge-progress">Démo 3 : <span id="demo3-text">0%</span></span>
+          <span class="demo-badge-progress">Démo 3 <span id="demo3-text">0%</span></span>
+          <div class="demo-mini-bar" aria-hidden="true"><div class="demo-mini-fill" id="demo3-bar"></div></div>
         </div>
         <div class="demo-progress-item">
-          <span class="demo-badge-progress">Démo 4 : <span id="demo4-text">0%</span></span>
+          <span class="demo-badge-progress">Démo 4 <span id="demo4-text">0%</span></span>
+          <div class="demo-mini-bar" aria-hidden="true"><div class="demo-mini-fill" id="demo4-bar"></div></div>
         </div>
         <div class="demo-progress-item">
-          <span class="demo-badge-progress">Dossier : <span id="dossier-text">0%</span></span>
+          <span class="demo-badge-progress">Dossier <span id="dossier-text">0%</span></span>
+          <div class="demo-mini-bar" aria-hidden="true"><div class="demo-mini-fill" id="dossier-bar"></div></div>
         </div>
         <div class="demo-progress-item">
-          <span class="demo-badge-progress">Optionnel : <span id="optionnel-text">0%</span></span>
+          <span class="demo-badge-progress">Optionnel <span id="optionnel-text">0%</span></span>
+          <div class="demo-mini-bar" aria-hidden="true"><div class="demo-mini-fill" id="optionnel-bar"></div></div>
         </div>
       </div>
     </div>
@@ -1516,7 +1532,7 @@
           rel="noopener noreferrer"
           class="github-link"
         >
-          <svg class="github-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="github-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M12 0.5C5.37 0.5 0 5.87 0 12.5C0 17.77 3.44 22.17 8.22 23.73C8.82 23.84 9.04 23.47 9.04 23.15C9.04 22.86 9.03 22.1 9.03 21.09C5.68 21.83 4.98 19.61 4.98 19.61C4.42 18.25 3.63 17.88 3.63 17.88C2.54 17.12 3.72 17.14 3.72 17.14C4.92 17.23 5.56 18.39 5.56 18.39C6.64 20.25 8.36 19.71 9.08 19.41C9.19 18.63 9.49 18.1 9.83 17.8C7.16 17.5 4.34 16.45 4.34 11.79C4.34 10.51 4.81 9.46 5.58 8.65C5.45 8.35 5.04 7.08 5.7 5.38C5.7 5.38 6.73 5.05 9.02 6.57C9.98 6.31 11.01 6.18 12.04 6.18C13.07 6.18 14.1 6.31 15.06 6.57C17.35 5.05 18.38 5.38 18.38 5.38C19.04 7.08 18.63 8.35 18.5 8.65C19.27 9.46 19.74 10.51 19.74 11.79C19.74 16.46 16.91 17.49 14.24 17.79C14.66 18.16 15.04 18.89 15.04 20.01C15.04 21.62 15.03 22.91 15.03 23.15C15.03 23.47 15.25 23.84 15.86 23.73C20.64 22.16 24.08 17.77 24.08 12.5C24.08 5.87 18.71 0.5 12.08 0.5H12Z" fill="currentColor"/>
           </svg>
           <p>Code source sur GitHub</p>

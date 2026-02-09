@@ -374,6 +374,55 @@ body {
     border-color: var(--border-hover);
 }
 
+/* ==================== GLOBAL COMMENT ==================== */
+
+.global-comment-container {
+    background-color: var(--surface);
+    padding: var(--space-4) var(--space-5);
+    margin: 0 auto var(--space-4);
+    max-width: 48rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.global-comment-label {
+    display: block;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    margin-bottom: var(--space-2);
+}
+
+.global-comment-input {
+    width: 100%;
+    min-height: 4rem;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--text-color);
+    font-size: 0.9375rem;
+    font-family: var(--font-primary);
+    resize: vertical;
+    line-height: 1.5;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.global-comment-input::placeholder {
+    color: var(--text-muted);
+}
+
+.global-comment-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: var(--shadow-focus);
+}
+
+.global-comment-input:hover {
+    border-color: var(--border-hover);
+}
+
 /* ==================== FILTERS (segmented control) ==================== */
 
 .filters {
@@ -540,26 +589,43 @@ body {
 
 /* Per-demo progress */
 .demo-progress {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-2);
     flex: 1;
 }
 
 .demo-progress-item {
     display: flex;
-    align-items: center;
-    gap: var(--space-2);
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .demo-badge-progress {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    font-size: 0.8125rem;
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
     font-weight: 600;
     white-space: nowrap;
+}
+
+/* Mini progress bars */
+.demo-mini-bar {
+    width: 100%;
+    height: 0.25rem;
+    border-radius: var(--radius-full);
+    background-color: var(--border-color);
+    overflow: hidden;
+}
+
+.demo-mini-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: var(--radius-full);
+    transition: width 0.4s ease;
 }
 
 /* Badge progress colors */
@@ -568,9 +634,17 @@ body {
     background-color: var(--badge-demo1-bg);
 }
 
+.demo-progress-item:nth-child(1) .demo-mini-fill {
+    background-color: var(--badge-demo1);
+}
+
 .demo-progress-item:nth-child(2) .demo-badge-progress {
     color: var(--badge-demo2);
     background-color: var(--badge-demo2-bg);
+}
+
+.demo-progress-item:nth-child(2) .demo-mini-fill {
+    background-color: var(--badge-demo2);
 }
 
 .demo-progress-item:nth-child(3) .demo-badge-progress {
@@ -578,9 +652,17 @@ body {
     background-color: var(--badge-demo3-bg);
 }
 
+.demo-progress-item:nth-child(3) .demo-mini-fill {
+    background-color: var(--badge-demo3);
+}
+
 .demo-progress-item:nth-child(4) .demo-badge-progress {
     color: var(--badge-demo4);
     background-color: var(--badge-demo4-bg);
+}
+
+.demo-progress-item:nth-child(4) .demo-mini-fill {
+    background-color: var(--badge-demo4);
 }
 
 .demo-progress-item:nth-child(5) .demo-badge-progress {
@@ -588,9 +670,17 @@ body {
     background-color: var(--badge-dossier-bg);
 }
 
+.demo-progress-item:nth-child(5) .demo-mini-fill {
+    background-color: var(--badge-dossier);
+}
+
 .demo-progress-item:nth-child(6) .demo-badge-progress {
     color: var(--badge-optionnel);
     background-color: var(--badge-optionnel-bg);
+}
+
+.demo-progress-item:nth-child(6) .demo-mini-fill {
+    background-color: var(--badge-optionnel);
 }
 
 /* Legacy progress bar (hidden by default, shown if no ring) */
@@ -780,6 +870,8 @@ details.section[open] > .checklist {
 .checklist li.search-highlight label {
     background-color: #FEF9C3;
     border-color: #FDE68A;
+    border-width: 2px;
+    border-style: solid;
 }
 
 /* Checked items get a subtle green tint */
@@ -1287,19 +1379,14 @@ details.section[open] > .checklist {
     }
 
     .demo-progress {
-        flex-direction: column;
-        gap: var(--space-1);
-        width: 100%;
-    }
-
-    .demo-progress-item {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-2);
         width: 100%;
     }
 
     .demo-badge-progress {
-        display: block;
-        width: 100%;
-        text-align: left;
+        font-size: 0.6875rem;
+        padding: var(--space-1) var(--space-2);
     }
 
     .nav-menu {
@@ -1358,6 +1445,11 @@ details.section[open] > .checklist {
         --text-secondary: #334155;
         --border-color: #475569;
         --bg-color: #fff;
+    }
+
+    :focus-visible {
+        outline: 3px solid var(--primary) !important;
+        outline-offset: 2px !important;
     }
 }
 

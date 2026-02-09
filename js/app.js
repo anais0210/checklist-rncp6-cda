@@ -6,6 +6,7 @@ import { SearchManager } from './search-manager.js';
 import { ResetManager } from './reset-manager.js';
 import { ProjectNameManager } from './project-name-manager.js';
 import { SectionManager } from './section-manager.js';
+import { GlobalCommentManager } from './global-comment-manager.js';
 
 class App {
     constructor() {
@@ -17,6 +18,7 @@ class App {
         this.resetManager = new ResetManager();
         this.projectNameManager = new ProjectNameManager();
         this.sectionManager = new SectionManager();
+        this.globalCommentManager = new GlobalCommentManager();
         this.loadVersion();
 
         window.app = this;

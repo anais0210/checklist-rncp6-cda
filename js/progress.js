@@ -51,6 +51,8 @@ export class ProgressManager {
         for (let i = 1; i <= 4; i++) {
             const demoPercentage = this.calculateProgressByBadge(`Démo ${i}`);
             document.getElementById(`demo${i}-text`).textContent = `${demoPercentage}%`;
+            const bar = document.getElementById(`demo${i}-bar`);
+            if (bar) bar.style.width = `${demoPercentage}%`;
         }
 
         const dossierPercentage = this.calculateProgressByBadge('Dossier projet');
@@ -58,6 +60,11 @@ export class ProgressManager {
 
         document.getElementById('dossier-text').textContent = `${dossierPercentage}%`;
         document.getElementById('optionnel-text').textContent = `${optionnelPercentage}%`;
+
+        const dossierBar = document.getElementById('dossier-bar');
+        if (dossierBar) dossierBar.style.width = `${dossierPercentage}%`;
+        const optionnelBar = document.getElementById('optionnel-bar');
+        if (optionnelBar) optionnelBar.style.width = `${optionnelPercentage}%`;
 
         document.dispatchEvent(new CustomEvent('checklist-updated'));
     }

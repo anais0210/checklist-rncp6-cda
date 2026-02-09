@@ -4,10 +4,9 @@ export class ExportManager {
     }
 
     init() {
-        const exportBtn = document.querySelector('.export-btn');
-        if (exportBtn) {
-            exportBtn.addEventListener('click', () => this.exportToExcel());
-        }
+        document.querySelectorAll('.export-btn').forEach(btn => {
+            btn.addEventListener('click', () => this.exportToExcel());
+        });
     }
 
     async loadXLSX() {
@@ -23,14 +22,14 @@ export class ExportManager {
     }
 
     async exportToExcel() {
-        const exportBtn = document.querySelector('.export-btn');
+        const exportBtns = document.querySelectorAll('.export-btn');
 
         try {
-            if (exportBtn) {
-                exportBtn.textContent = 'Chargement...';
-                exportBtn.disabled = true;
-                exportBtn.setAttribute('aria-busy', 'true');
-            }
+            exportBtns.forEach(btn => {
+                btn.textContent = 'Chargement...';
+                btn.disabled = true;
+                btn.setAttribute('aria-busy', 'true');
+            });
 
             await this.loadXLSX();
 
@@ -72,11 +71,11 @@ export class ExportManager {
             console.error('Erreur lors de l\'export Excel:', error);
             alert('Une erreur est survenue lors de l\'export Excel. Veuillez réessayer.');
         } finally {
-            if (exportBtn) {
-                exportBtn.textContent = 'Exporter en Excel';
-                exportBtn.disabled = false;
-                exportBtn.setAttribute('aria-busy', 'false');
-            }
+            exportBtns.forEach(btn => {
+                btn.textContent = 'Exporter en Excel';
+                btn.disabled = false;
+                btn.setAttribute('aria-busy', 'false');
+            });
         }
     }
 

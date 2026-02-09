@@ -8,6 +8,11 @@ export class ResetManager {
         if (resetBtn) {
             resetBtn.addEventListener('click', () => this.confirmReset());
         }
+
+        const resetTopBtn = document.getElementById('reset-top-btn');
+        if (resetTopBtn) {
+            resetTopBtn.addEventListener('click', () => this.confirmReset());
+        }
     }
 
     confirmReset() {

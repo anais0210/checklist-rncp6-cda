@@ -39,84 +39,88 @@
       </ul>
     </nav>
 
-    <details class="info-panel-collapsible">
-      <summary>Confidentialité et stockage des données</summary>
-      <div class="info-panel">
-        <div class="info-content">
-          <ul class="info-list">
-            <li>
-              <strong>Stockage local uniquement</strong> : Vos données sont
-              stockées dans votre navigateur (localStorage)
-            </li>
-            <li>
-              <strong>Aucune base de données externe</strong> : Aucune
-              information n'est envoyée vers un serveur
-            </li>
-            <li>
-              <strong>Pas de transfert de données</strong> : Toutes vos
-              données restent sur votre appareil
-            </li>
-            <li>
-              <strong>Export disponible</strong> : Vous pouvez exporter votre
-              checklist avec vos commentaires en bas de page
-            </li>
-          </ul>
+    <section aria-label="Informations">
+      <details class="info-panel-collapsible">
+        <summary>Confidentialité et stockage des données</summary>
+        <div class="info-panel">
+          <div class="info-content">
+            <ul class="info-list">
+              <li>
+                <strong>Stockage local uniquement</strong> : Vos données sont
+                stockées dans votre navigateur (localStorage)
+              </li>
+              <li>
+                <strong>Aucune base de données externe</strong> : Aucune
+                information n'est envoyée vers un serveur
+              </li>
+              <li>
+                <strong>Pas de transfert de données</strong> : Toutes vos
+                données restent sur votre appareil
+              </li>
+              <li>
+                <strong>Export disponible</strong> : Vous pouvez exporter votre
+                checklist avec vos commentaires en bas de page
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </details>
+      </details>
 
-    <div class="project-name-container">
-      <label for="project-name" class="project-name-label">Nom du projet :</label>
-      <input
-        type="text"
-        id="project-name"
-        placeholder="Ex: Le nom de mon projet - CDA 2025 - mon prénom et mon nom"
-        class="project-name-input"
-      />
-    </div>
-
-    <div class="global-comment-container">
-      <label for="global-comment" class="global-comment-label">Commentaire global sur le projet :</label>
-      <textarea
-        id="global-comment"
-        class="global-comment-input"
-        placeholder="Ajoutez ici vos remarques générales, objectifs, contexte du projet..."
-        rows="3"
-      ></textarea>
-    </div>
-
-    <div
-      class="filters"
-      role="group"
-      aria-label="Filtrer par catégorie"
-    >
-      <button class="filter-btn active" data-filter="all" aria-pressed="true">Tous</button>
-      <button class="filter-btn" data-filter="demo1" aria-pressed="false">Démo 1</button>
-      <button class="filter-btn" data-filter="demo2" aria-pressed="false">Démo 2</button>
-      <button class="filter-btn" data-filter="demo3" aria-pressed="false">Démo 3</button>
-      <button class="filter-btn" data-filter="demo4" aria-pressed="false">Démo 4</button>
-      <button class="filter-btn" data-filter="dossier" aria-pressed="false">Dossier projet</button>
-      <button class="filter-btn" data-filter="optionnel" aria-pressed="false">Optionnel</button>
-    </div>
-
-    <div class="search-container container">
-      <div class="search-box">
-        <label for="search-input" class="sr-only">Rechercher dans les descriptions</label>
+      <div class="project-name-container">
+        <label for="project-name" class="project-name-label">Nom du projet :</label>
         <input
           type="text"
-          id="search-input"
-          placeholder="Rechercher dans les descriptions..."
+          id="project-name"
+          placeholder="Ex: Le nom de mon projet - CDA 2025 - mon prénom et mon nom"
+          class="project-name-input"
         />
-        <button
-          id="clear-search"
-          class="clear-search-btn"
-          aria-label="Effacer la recherche"
-        >&#10005;</button>
       </div>
-      <div id="search-results-count" class="search-results-count" aria-live="polite" aria-atomic="true"></div>
-    </div>
 
-    <div class="progress-sticky">
+      <div class="global-comment-container">
+        <label for="global-comment" class="global-comment-label">Commentaire global sur le projet :</label>
+        <textarea
+          id="global-comment"
+          class="global-comment-input"
+          placeholder="Ajoutez ici vos remarques générales, objectifs, contexte du projet..."
+          rows="3"
+        ></textarea>
+      </div>
+    </section>
+
+    <section role="search" aria-label="Recherche et filtres">
+      <div
+        class="filters"
+        role="group"
+        aria-label="Filtrer par catégorie"
+      >
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">Tous</button>
+        <button class="filter-btn" data-filter="demo1" aria-pressed="false">Démo 1</button>
+        <button class="filter-btn" data-filter="demo2" aria-pressed="false">Démo 2</button>
+        <button class="filter-btn" data-filter="demo3" aria-pressed="false">Démo 3</button>
+        <button class="filter-btn" data-filter="demo4" aria-pressed="false">Démo 4</button>
+        <button class="filter-btn" data-filter="dossier" aria-pressed="false">Dossier projet</button>
+        <button class="filter-btn" data-filter="optionnel" aria-pressed="false">Optionnel</button>
+      </div>
+
+      <div class="search-container container">
+        <div class="search-box">
+          <label for="search-input" class="sr-only">Rechercher dans les descriptions</label>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Rechercher dans les descriptions..."
+          />
+          <button
+            id="clear-search"
+            class="clear-search-btn"
+            aria-label="Effacer la recherche"
+          >&#10005;</button>
+        </div>
+        <div id="search-results-count" class="search-results-count" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </section>
+
+    <div class="progress-sticky" role="region" aria-label="Barre de progression">
       <div class="progress-container">
         <div class="progress-ring" id="progress-ring" style="--progress: 0" role="img" aria-label="Progression globale">
           <span id="progress-text" aria-live="polite" aria-atomic="true">0%</span>
@@ -168,7 +172,6 @@
                 <input
                   type="checkbox"
                   id="env-dev"
-                  title="Description de l'environnement de développement utilisé"
                   aria-label="Description de l'environnement de développement utilisé"
                 />
                 <span>Description de l'environnement de développement utilisé</span>
@@ -188,7 +191,6 @@
                 <input
                   type="checkbox"
                   id="choix-tech"
-                  title="Explication des choix techniques"
                   aria-label="Explication des choix techniques (IDE, frameworks, librairies, outils)"
                 />
                 <span>Explication des choix techniques (IDE, frameworks, librairies, outils)</span>
@@ -208,7 +210,6 @@
                 <input
                   type="checkbox"
                   id="process-install"
-                  title="Processus d'installation et de configuration"
                   aria-label="Processus d'installation et de configuration (Readme, Documentation Notion/Word/etc …)"
                 />
                 <span>Processus d'installation et de configuration (Readme, Documentation Notion/Word/etc …)</span>
@@ -228,7 +229,6 @@
                 <input
                   type="checkbox"
                   id="containerisation"
-                  title="Containeuriser l'application"
                   aria-label="Containeuriser l'application (Docker, Podman, etc.)"
                 />
                 <span>Containeuriser l'application (Docker, Podman, etc.)</span>
@@ -257,7 +257,6 @@
                 <input
                   type="checkbox"
                   id="charte-graphique"
-                  title="Création d'une charte graphique"
                   aria-label="Création d'une charte graphique"
                 />
                 <span>Création d'une charte graphique</span>
@@ -277,7 +276,6 @@
                 <input
                   type="checkbox"
                   id="a11y-charte"
-                  title="Charte graphique accessible"
                   aria-label="Charte graphique accessible"
                 />
                 <span>Charte graphique accessible</span>
@@ -297,7 +295,6 @@
                 <input
                   type="checkbox"
                   id="maquettes"
-                  title="Présentation des maquettes et wireframes"
                   aria-label="Présentation des maquettes et wireframes"
                 />
                 <span>Présentation des maquettes et wireframes</span>
@@ -317,7 +314,6 @@
                 <input
                   type="checkbox"
                   id="ergonomie"
-                  title="Explication des choix ergonomiques"
                   aria-label="Explication des choix ergonomiques et d'UX/UI"
                 />
                 <span>Explication des choix ergonomiques et d'UX/UI</span>
@@ -330,7 +326,6 @@
                 <input
                   type="checkbox"
                   id="tech-front"
-                  title="Description des technologies front-end"
                   aria-label="Description des technologies front-end utilisées (HTML, CSS, JavaScript, frameworks)"
                 />
                 <span>Description des technologies front-end utilisées (HTML, CSS, JavaScript, frameworks)</span>
@@ -343,7 +338,6 @@
                 <input
                   type="checkbox"
                   id="responsive"
-                  title="Adaptation responsive/mobile"
                   aria-label="Adaptation responsive/mobile des interfaces sur maquettes"
                 />
                 <span>Adaptation responsive/mobile des interfaces sur maquettes</span>
@@ -363,7 +357,6 @@
                 <input
                   type="checkbox"
                   id="accessibilite"
-                  title="Mise en œuvre des bonnes pratiques d'accessibilité"
                   aria-label="Mise en œuvre des bonnes pratiques d'accessibilité (couleur / label / zone cliquable etc …) sur maquettes"
                 />
                 <span>Mise en œuvre des bonnes pratiques d'accessibilité (couleur / label / zone cliquable etc …) sur maquettes</span>
@@ -392,7 +385,6 @@
                 <input
                   type="checkbox"
                   id="archi-composants"
-                  title="Architecture des composants métier"
                   aria-label="Architecture des composants métier développés (Structure, Découpage …)"
                 />
                 <span>Architecture des composants (Structure modulable, découpage fonctionnel, etc...)</span>
@@ -412,7 +404,6 @@
                 <input
                   type="checkbox"
                   id="patterns"
-                  title="Patterns de conception"
                   aria-label="Patterns de conception implémentés"
                 />
                 <span>Patterns de conception implémentés (Singleton, Factory, Observer, Strategy, Adapter, Repository, MVC / MVVM / MVU,etc...)</span>
@@ -432,7 +423,6 @@
                 <input
                   type="checkbox"
                   id="regles-metier"
-                  title="Gestion des règles métier"
                   aria-label="Gestion des règles métier (isolation des règles, possibilité de les faire évoluer sans impacter le reste du projet …)"
                 />
                 <span>Gestion des règles métier (isolation des règles, possibilité de les faire évoluer sans impacter le reste du projet …)</span>
@@ -452,7 +442,6 @@
                 <input
                   type="checkbox"
                   id="securite-composants"
-                  title="Sécurisation des composants métier"
                   aria-label="Sécurisation des composants métier (gestion des permissions, validation des entrées …)"
                 />
                 <span>Sécurisation des composants métier (gestion des permissions, validation des entrées …)</span>
@@ -481,7 +470,6 @@
                 <input
                   type="checkbox"
                   id="methodologie"
-                  title="Méthodologie de gestion de projet"
                   aria-label="Méthodologie de gestion de projet utilisée (scrum, kanban, shape up, cycle en V …)"
                 />
                 <span>Méthodologie de gestion de projet utilisée (scrum, kanban, shape up, cycle en V …)</span>
@@ -501,7 +489,6 @@
                 <input
                   type="checkbox"
                   id="planification"
-                  title="Planification et suivi des tâches"
                   aria-label="Planification et suivi des tâches"
                 />
                 <span>Planification et suivi des tâches</span>
@@ -521,7 +508,6 @@
                 <input
                   type="checkbox"
                   id="versions"
-                  title="Gestion des versions"
                   aria-label="Gestion des versions (Git ou autre)"
                 />
                 <span>Gestion des versions (Git ou autre)</span>
@@ -541,7 +527,6 @@
                 <input
                   type="checkbox"
                   id="collaboration"
-                  title="Collaboration et communication"
                   aria-label="Collaboration et communication au sein de l'équipe"
                 />
                 <span>Collaboration et communication au sein de l'équipe (Trello, Notion, Asana, Word, Slack, etc ...)</span>
@@ -576,7 +561,6 @@
                 <input
                   type="checkbox"
                   id="analyse-besoins"
-                  title="Analyse des besoins"
                   aria-label="Analyse détaillée des besoins fonctionnels et techniques"
                 />
                 <span>Analyse des besoins fonctionnels et techniques</span>
@@ -596,7 +580,6 @@
                 <input
                   type="checkbox"
                   id="cahier-charges"
-                  title="Cahier des charges"
                   aria-label="Cahier des charges et spécifications"
                 />
                 <span>Cahier des charges et spécifications</span>
@@ -625,7 +608,6 @@
                 <input
                   type="checkbox"
                   id="patterns-archi"
-                  title="Description de l'architecture logicielle"
                   aria-label="Description de l'architecture logicielle"
                 />
                 <span>Description de l'architecture logicielle utilisée</span>
@@ -645,7 +627,6 @@
                 <input
                   type="checkbox"
                   id="securite-archi"
-                  title="Sécurité architecture"
                   aria-label="Aspects de sécurité dans l'architecture"
                 />
                 <span>Aspects de sécurité dans l'architecture</span>
@@ -674,7 +655,6 @@
                 <input
                   type="checkbox"
                   id="optimisation-bd"
-                  title="Optimisation BD"
                   aria-label="Optimisation et indexation"
                 />
                 <span>Optimisation et indexation</span>
@@ -687,7 +667,6 @@
                 <input
                   type="checkbox"
                   id="securite-donnees"
-                  title="Sécurité données"
                   aria-label="Sécurité et protection des données"
                 />
                 <span>Sécurité et protection des données</span>
@@ -716,7 +695,6 @@
                 <input
                   type="checkbox"
                   id="orm"
-                  title="ORM"
                   aria-label="Utilisation d'un ORM, explication de l'utilisation et implémentation"
                 />
                 <span>Utilisation d'un ORM, explication de l'utilisation et implémentation</span>
@@ -736,7 +714,6 @@
                 <input
                   type="checkbox"
                   id="requetes"
-                  title="Requêtes"
                   aria-label="Gestion des requêtes et transactions"
                 />
                 <span>Gestion des requêtes et transactions</span>
@@ -756,7 +733,6 @@
                 <input
                   type="checkbox"
                   id="cache"
-                  title="Cache"
                   aria-label="Mise en cache et optimisation des performances"
                 />
                 <span>Mise en cache et optimisation des performances</span>
@@ -778,7 +754,6 @@
                 <input
                   type="checkbox"
                   id="doc-api"
-                  title="Documentation technique de l'API (Uniquement si votre projet est une API)"
                   aria-label="Documentation technique de l'API (Uniquement si votre projet est une API)"
                 />
                 <span>Documentation technique de l'API (Uniquement si votre projet est une API)</span>
@@ -798,7 +773,6 @@
                 <input
                   type="checkbox"
                   id="doc-code"
-                  title="Documentation code"
                   aria-label="Documentation du code source"
                 />
                 <span>Documentation du code source</span>
@@ -811,7 +785,6 @@
                 <input
                   type="checkbox"
                   id="doc-deploiement"
-                  title="Documentation déploiement"
                   aria-label="Documentation de déploiement"
                 />
                 <span>Documentation de déploiement</span>
@@ -840,7 +813,6 @@
                 <input
                   type="checkbox"
                   id="environnement"
-                  title="Environnement"
                   aria-label="Environnement de test"
                 />
                 <span>Environnement de test</span>
@@ -853,7 +825,6 @@
                 <input
                   type="checkbox"
                   id="configuration"
-                  title="Configuration"
                   aria-label="Configuration et paramètres"
                 />
                 <span>Configuration et paramètres ( dev - test - prod optionnel )</span>
@@ -866,7 +837,6 @@
                 <input
                   type="checkbox"
                   id="securite-deploiement"
-                  title="Sécurité déploiement"
                   aria-label="Sécurité du déploiement"
                 />
                 <span>Sécurité du déploiement (Variables d'environnement, Accès SSH, Principe de moindre privilège, HTTPS en production, etc ...)</span>
@@ -901,7 +871,6 @@
                 <input
                   type="checkbox"
                   id="strategie-tests"
-                  title="Stratégie de tests"
                   aria-label="Stratégie de tests (unitaires, intégration, e2e)"
                 />
                 <span>Stratégie de tests (unitaires, intégration, e2e)</span>
@@ -921,7 +890,6 @@
                 <input
                   type="checkbox"
                   id="plans-tests"
-                  title="Plans de tests"
                   aria-label="Plans de tests réalisés"
                 />
                 <span>Plans de tests réalisés</span>
@@ -941,7 +909,6 @@
                 <input
                   type="checkbox"
                   id="outils-tests"
-                  title="Outils de tests"
                   aria-label="Outils et frameworks de tests utilisés"
                 />
                 <span>Outils et frameworks de tests utilisés</span>
@@ -954,7 +921,6 @@
                 <input
                   type="checkbox"
                   id="resultats-tests"
-                  title="Résultats des tests"
                   aria-label="Résultats des tests et corrections apportées"
                 />
                 <span>Résultats des tests et corrections apportées</span>
@@ -967,7 +933,6 @@
                 <input
                   type="checkbox"
                   id="tests-securite"
-                  title="Tests de sécurité"
                   aria-label="Tests de sécurité et de performance"
                 />
                 <span>Tests de sécurité</span>
@@ -1063,7 +1028,6 @@
                 <input
                   type="checkbox"
                   id="cicd"
-                  title="CI/CD"
                   aria-label="Intégration continue / Déploiement continu (CI/CD)"
                 />
                 <span>Intégration continue / Déploiement continu (CI/CD)</span>
@@ -1083,7 +1047,6 @@
                 <input
                   type="checkbox"
                   id="automatisation"
-                  title="Automatisation"
                   aria-label="Automatisation des processus"
                 />
                 <span>Automatisation des processus (Lancer les tests à chaque push, Dependabot, Déployer sur un serveur, Générer un changelog)</span>
@@ -1103,7 +1066,6 @@
                 <input
                   type="checkbox"
                   id="monitoring"
-                  title="Monitoring"
                   aria-label="Monitoring et alerting"
                 />
                 <span>Monitoring et alerting</span>
@@ -1116,7 +1078,6 @@
                 <input
                   type="checkbox"
                   id="versions-releases"
-                  title="Gestion des versions"
                   aria-label="Gestion des versions et des releases"
                 />
                 <span>Gestion des versions et des releases</span>
@@ -1129,7 +1090,6 @@
                 <input
                   type="checkbox"
                   id="securite-pipeline"
-                  title="Sécurisation du pipeline"
                   aria-label="Sécurisation du pipeline de déploiement"
                 />
                 <span>Sécurisation du pipeline de déploiement</span>
@@ -1162,7 +1122,6 @@
                 <input
                   type="checkbox"
                   id="standards"
-                  title="Respect des standards de code"
                   aria-label="Respect des standards de code"
                 />
                 <span>Respect des standards de code</span>
@@ -1175,7 +1134,6 @@
                 <input
                   type="checkbox"
                   id="erreurs"
-                  title="Gestion des erreurs"
                   aria-label="Gestion des erreurs et exceptions"
                 />
                 <span>Gestion des erreurs et exceptions</span>
@@ -1188,7 +1146,6 @@
                 <input
                   type="checkbox"
                   id="vulnerabilites"
-                  title="Protection contre les vulnérabilités"
                   aria-label="Protection contre les vulnérabilités courantes (OWASP)"
                 />
                 <span>Protection contre les vulnérabilités courantes (OWASP)</span>
@@ -1208,7 +1165,6 @@
                 <input
                   type="checkbox"
                   id="journalisation"
-                  title="Journalisation"
                   aria-label="Journalisation et audit"
                 />
                 <span>Journalisation et audit</span>
@@ -1230,7 +1186,6 @@
                 <input
                   type="checkbox"
                   id="clarte"
-                  title="Clarté du rapport"
                   aria-label="Clarté et structure du rapport"
                 />
                 <span>Clarté et structure du rapport</span>
@@ -1243,7 +1198,6 @@
                 <input
                   type="checkbox"
                   id="illustrations"
-                  title="Illustrations"
                   aria-label="Illustrations pertinentes (captures d'écran, diagrammes)"
                 />
                 <span>Illustrations pertinentes (captures d'écran, diagrammes)</span>
@@ -1256,7 +1210,6 @@
                 <input
                   type="checkbox"
                   id="glossaire"
-                  title="Glossaire"
                   aria-label="Glossaire des termes techniques"
                 />
                 <span>Glossaire des termes techniques</span>
@@ -1269,7 +1222,6 @@
                 <input
                   type="checkbox"
                   id="demo"
-                  title="Démonstration"
                   aria-label="Démonstration fonctionnelle prévue ou vidéo"
                 />
                 <span>Démonstration fonctionnelle prévue ou vidéo</span>
@@ -1291,7 +1243,6 @@
                 <input
                   type="checkbox"
                   id="resume-en"
-                  title="Inclure un résumé en anglais"
                   aria-label="Inclure un résumé en anglais"
                 />
                 <span>Inclure un résumé en anglais</span>
@@ -1320,7 +1271,6 @@
                 <input
                   type="checkbox"
                   id="validation-besoins"
-                  title="Validation des besoins"
                   aria-label="Validation des besoins avec les parties prenantes (client/clientes - dev - produit …)"
                 />
                 <span>Validation des besoins avec les parties prenantes (client/clientes - dev - produit …)</span>
@@ -1342,7 +1292,6 @@
                 <input
                   type="checkbox"
                   id="organisation-couches"
-                  title="Organisation en couches"
                   aria-label="Organisation en couches de l'application"
                 />
                 <span>Organisation en couches de l'application</span>
@@ -1362,7 +1311,6 @@
                 <input
                   type="checkbox"
                   id="integration-api"
-                  title="Mécanismes d'intégration"
                   aria-label="Mécanismes d'intégration et d'interopérabilité (api rest, soap, graphql etc … format json, xml etc …)"
                 />
                 <span>Mécanismes d'intégration et d'interopérabilité (api rest, soap, graphql etc … format json, xml etc …)</span>
@@ -1384,7 +1332,6 @@
                 <input
                   type="checkbox"
                   id="mcd"
-                  title="Modèle conceptuel"
                   aria-label="Modèle conceptuel de données (MCD)"
                 />
                 <span>Modèle conceptuel de données (MCD)</span>
@@ -1404,7 +1351,6 @@
                 <input
                   type="checkbox"
                   id="mpd"
-                  title="Modèle physique"
                   aria-label="Modèle physique de données (MPD)"
                 />
                 <span>Modèle physique de données (MPD)</span>
@@ -1417,7 +1363,6 @@
                 <input
                   type="checkbox"
                   id="mld"
-                  title="Modèle logique"
                   aria-label="Modèle logique de données (MLD)"
                 />
                 <span>Modèle logique de données (MLD)</span>
@@ -1430,7 +1375,6 @@
                 <input
                   type="checkbox"
                   id="scripts-bd"
-                  title="Scripts de création"
                   aria-label="Scripts de création de la base de données"
                 />
                 <span>Scripts de création de la base de données</span>
@@ -1450,7 +1394,6 @@
                 <input
                   type="checkbox"
                   id="securite-acces"
-                  title="Sécurisation des accès"
                   aria-label="Sécurisation des accès à la base de données"
                 />
                 <span>Sécurisation des accès à la base de données</span>
@@ -1479,7 +1422,6 @@
                 <input
                   type="checkbox"
                   id="strategie-acces"
-                  title="Stratégie d'accès"
                   aria-label="Stratégie d'accès aux données (ORM, DAO, Repository)"
                 />
                 <span>Stratégie d'accès aux données (ORM, DAO, Repository)</span>
@@ -1492,7 +1434,6 @@
                 <input
                   type="checkbox"
                   id="requetes-sql"
-                  title="Requêtes SQL"
                   aria-label="Implémentation des requêtes SQL"
                 />
                 <span>Implémentation des requêtes SQL</span>
@@ -1505,7 +1446,6 @@
                 <input
                   type="checkbox"
                   id="nosql"
-                  title="Intégration NoSQL"
                   aria-label="Intégration éventuelle de bases NoSQL"
                 />
                 <span>Intégration de bases NoSQL</span>

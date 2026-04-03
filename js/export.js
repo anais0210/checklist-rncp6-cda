@@ -23,12 +23,16 @@ export class ExportManager {
 
     async exportToExcel() {
         const exportBtns = document.querySelectorAll('.export-btn');
+        const resetBtns = document.querySelectorAll('.reset-btn');
 
         try {
             exportBtns.forEach(btn => {
                 btn.textContent = 'Chargement...';
                 btn.disabled = true;
                 btn.setAttribute('aria-busy', 'true');
+            });
+            resetBtns.forEach(btn => {
+                btn.disabled = true;
             });
 
             await this.loadXLSX();
@@ -54,7 +58,8 @@ export class ExportManager {
                 { width: 60 },
                 { width: 15 },
                 { width: 20 },
-                { width: 25 }
+                { width: 25 },
+                { width: 40 }
             ];
 
             XLSX.utils.book_append_sheet(wb, ws, 'Checklist CDA');
@@ -75,6 +80,9 @@ export class ExportManager {
                 btn.textContent = 'Exporter en Excel';
                 btn.disabled = false;
                 btn.setAttribute('aria-busy', 'false');
+            });
+            resetBtns.forEach(btn => {
+                btn.disabled = false;
             });
         }
     }

@@ -17,7 +17,7 @@ export class ResetManager {
 
     confirmReset() {
         const confirmed = confirm(
-            ' ATTENTION !\n\n' +
+            'ATTENTION !\n\n' +
             'Êtes-vous sûr de vouloir tout réinitialiser ?\n\n' +
             'Cette action va :\n' +
             '• Décocher toutes les cases\n' +
@@ -27,7 +27,14 @@ export class ResetManager {
         );
 
         if (confirmed) {
-            this.performReset();
+            const doubleConfirm = confirm(
+                'Dernière confirmation :\n\n' +
+                'Toutes vos données seront définitivement supprimées.\n' +
+                'Voulez-vous vraiment continuer ?'
+            );
+            if (doubleConfirm) {
+                this.performReset();
+            }
         }
     }
 

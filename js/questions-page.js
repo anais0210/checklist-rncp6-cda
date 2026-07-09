@@ -65,7 +65,7 @@ function matches(q) {
 function questionCard(q) {
     const niveau = NIVEAUX.find((n) => n.key === q.niveauKey) || NIVEAUX[0];
     const vigilance = q.vigilance
-        ? `<details class="question-detail question-detail--vigilance">
+        ? `<details class="question-detail question-detail-vigilance">
              <summary><span class="question-detail-icon" aria-hidden="true">⚠️</span> Point de vigilance / relance</summary>
              <p>${escapeHtml(q.vigilance)}</p>
            </details>`
@@ -74,15 +74,15 @@ function questionCard(q) {
     return `<article class="question-card"
         data-niveau="${q.niveauKey}" data-demo="${q.demoKey}" data-categorie="${escapeHtml(q.categorie)}">
       <div class="question-badges">
-        <span class="q-badge q-badge--bloc">${escapeHtml(blocShort(q.bloc))}</span>
+        <span class="q-badge q-badge-bloc">${escapeHtml(blocShort(q.bloc))}</span>
         <span class="demo-badge" data-badge="${q.demoKey}">${escapeHtml(q.demo)}</span>
         <span class="niveau-badge" data-niveau="${q.niveauKey}">
           <span class="niveau-badge-symbol" aria-hidden="true">${niveau.symbol}</span>${escapeHtml(niveau.label)}
         </span>
-        <span class="q-badge q-badge--cat">${escapeHtml(q.categorie)}</span>
+        <span class="q-badge q-badge-cat">${escapeHtml(q.categorie)}</span>
       </div>
       <h2 class="question-text"><span class="question-num" aria-hidden="true">Q${q.num}.</span> ${escapeHtml(q.question)}</h2>
-      <details class="question-detail question-detail--reponse">
+      <details class="question-detail question-detail-reponse">
         <summary><span class="question-detail-icon" aria-hidden="true">💡</span> Réponse attendue — points clés</summary>
         <p>${escapeHtml(q.reponse)}</p>
       </details>

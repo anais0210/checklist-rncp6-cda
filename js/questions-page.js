@@ -146,6 +146,10 @@ function init() {
     countEl = document.getElementById('questions-count');
     if (!containerEl) return;
 
+    // Total affiché dans le sous-titre, calculé depuis les données (jamais en dur).
+    const totalEl = document.getElementById('questions-total');
+    if (totalEl) totalEl.textContent = QUESTIONS.length;
+
     buildSegmentedGroup(document.getElementById('filter-niveau'), NIVEAUX, 'niveau');
     buildSegmentedGroup(document.getElementById('filter-demo'), DEMOS, 'demo');
 

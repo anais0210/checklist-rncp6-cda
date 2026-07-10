@@ -78,3 +78,7 @@ compris **la notion de _fork_** si tu débutes avec Git.
 
 En résumé : _fork_ → branche → modifs → `npm run lint && npm run test:a11y` →
 _pull request_ vers `main`.
+
+## 📄 Licence
+
+Distribué sous licence **ISC** — voir [LICENSE](LICENSE).

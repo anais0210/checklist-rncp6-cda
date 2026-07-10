@@ -36,6 +36,7 @@ const state = {
     niveau: 'all',
     demo: 'all',
     categorie: 'all',
+    type: 'all',
     search: '',
 };
 
@@ -53,9 +54,10 @@ function matches(q) {
     if (state.niveau !== 'all' && q.niveauKey !== state.niveau) return false;
     if (state.demo !== 'all' && q.demoKey !== state.demo) return false;
     if (state.categorie !== 'all' && q.categorie !== state.categorie) return false;
+    if (state.type !== 'all' && q.type !== state.type) return false;
     if (state.search) {
         const haystack = normalize(
-            `${q.question} ${q.reponse} ${q.vigilance} ${q.categorie} ${q.bloc}`,
+            `${q.question} ${q.reponse} ${q.vigilance} ${q.categorie} ${q.bloc} ${q.type}`,
         );
         if (!haystack.includes(normalize(state.search))) return false;
     }
@@ -64,6 +66,9 @@ function matches(q) {
 
 function questionCard(q) {
     const niveau = NIVEAUX.find((n) => n.key === q.niveauKey) || NIVEAUX[0];
+    const typeBadge = q.type
+        ? `<span class="q-badge q-badge-type">${escapeHtml(q.type)}</span>`
+        : '';
     const vigilance = q.vigilance
         ? `<details class="question-detail question-detail-vigilance">
              <summary><span class="question-detail-icon" aria-hidden="true">⚠️</span> Point de vigilance / relance</summary>
@@ -80,6 +85,7 @@ function questionCard(q) {
           <span class="niveau-badge-symbol" aria-hidden="true">${niveau.symbol}</span>${escapeHtml(niveau.label)}
         </span>
         <span class="q-badge q-badge-cat">${escapeHtml(q.categorie)}</span>
+        ${typeBadge}
       </div>
       <h2 class="question-text"><span class="question-num" aria-hidden="true">Q${q.num}.</span> ${escapeHtml(q.question)}</h2>
       <details class="question-detail question-detail-reponse">
@@ -159,6 +165,22 @@ function init() {
         render();
     });
 
+    // Type de question (colonne « Type » de la série 2 : mise en situation, technique…).
+    const typeSelect = document.getElementById('filter-type');
+    const types = [...new Set(QUESTIONS.map((q) => q.type).filter(Boolean))].sort((a, b) =>
+        a.localeCompare(b, 'fr'),
+    );
+    for (const t of types) {
+        const opt = document.createElement('option');
+        opt.value = t;
+        opt.textContent = t;
+        typeSelect.appendChild(opt);
+    }
+    typeSelect.addEventListener('change', () => {
+        state.type = typeSelect.value || 'all';
+        render();
+    });
+
     // Recherche plein texte.
     const searchInput = document.getElementById('questions-search');
     searchInput.addEventListener('input', () => {
@@ -171,8 +193,10 @@ function init() {
         state.niveau = 'all';
         state.demo = 'all';
         state.categorie = 'all';
+        state.type = 'all';
         state.search = '';
         catSelect.value = '';
+        typeSelect.value = '';
         searchInput.value = '';
         document.querySelectorAll('#filter-niveau .filter-btn, #filter-demo .filter-btn').forEach((b) => {
             const active = b.dataset.filter === 'all';

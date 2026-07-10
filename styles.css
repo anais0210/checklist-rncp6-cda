@@ -1657,6 +1657,13 @@ details.section[open] > .checklist {
     background-color: var(--primary-light);
 }
 
+/* Badge type (série 2) : contour, forme distincte des badges pleins. */
+.q-badge-type {
+    color: var(--accent);
+    background-color: transparent;
+    border: 1px dashed var(--accent);
+}
+
 /* Badge niveau : couleur + symbole + libellé (jamais la couleur seule). */
 .niveau-badge {
     display: inline-flex;

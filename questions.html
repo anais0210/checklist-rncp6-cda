@@ -15,8 +15,8 @@
       <div class="container">
         <h1>Questions du jury</h1>
         <p class="subtitle">
-          Banque de 102 questions type que le jury peut poser à l'oral, avec la réponse attendue et
-          les points de vigilance. Filtrez par niveau, par démo ou par catégorie.
+          Banque de 202 questions type que le jury peut poser à l'oral, avec la réponse attendue et
+          les points de vigilance. Filtrez par niveau, par démo, par catégorie ou par type.
         </p>
       </div>
     </header>
@@ -61,6 +61,13 @@
             </select>
           </div>
 
+          <div class="filter-group filter-group-inline">
+            <label class="filter-group-label" for="filter-type">Type</label>
+            <select id="filter-type" class="filter-select">
+              <option value="">Tous les types</option>
+            </select>
+          </div>
+
           <div class="filter-group filter-group-inline filter-group-grow">
             <label class="filter-group-label" for="questions-search">Recherche</label>
             <input
@@ -76,7 +83,7 @@
         </div>
       </section>
 
-      <p class="questions-count" id="questions-count" role="status" aria-live="polite">102 questions</p>
+      <p class="questions-count" id="questions-count" role="status" aria-live="polite">202 questions</p>
 
       <section id="questions-container" class="questions-container" aria-label="Liste des questions"></section>
     </main>

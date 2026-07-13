@@ -1806,3 +1806,15 @@ details.section[open] > .checklist {
         width: 100%;
     }
 }
+
+/* ==================== NOTE RÉFÉRENTIEL (footer) ==================== */
+
+.referentiel-note {
+    max-width: 60rem;
+    margin: var(--space-4) auto 0;
+    padding: 0 var(--space-6);
+    text-align: center;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}

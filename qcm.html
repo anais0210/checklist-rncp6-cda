@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QCM d'entraînement - Checklist CDA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/qcm-page.js"></script>
+    <script src="js/navigation.js"></script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="header">
+      <div class="container">
+        <h1>QCM d'entraînement</h1>
+        <p class="subtitle">
+          <span id="qcm-total">…</span> questions à choix multiples sur les compétences du titre CDA,
+          avec une explication après chaque réponse. Tout reste dans votre navigateur.
+        </p>
+      </div>
+    </header>
+
+    <nav class="top-nav" aria-label="Navigation principale">
+      <ul class="nav-menu">
+        <li><a href="index.html">Checklist</a></li>
+        <li><a href="questions.html">Questions du jury</a></li>
+        <li><a href="qcm.html" class="active" aria-current="page">QCM</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-content" class="container qcm-main">
+      <!-- Écran 1 : configuration -->
+      <section id="qcm-setup" class="qcm-screen" aria-labelledby="qcm-setup-title">
+        <h2 id="qcm-setup-title" class="qcm-screen-title" tabindex="-1">Configurer mon QCM</h2>
+
+        <form id="qcm-setup-form" class="qcm-card qcm-setup-form">
+          <fieldset class="qcm-fieldset">
+            <legend class="qcm-legend">Bloc de compétences</legend>
+            <div class="qcm-choices" id="qcm-bloc-choices"></div>
+          </fieldset>
+
+          <fieldset class="qcm-fieldset">
+            <legend class="qcm-legend">Nombre de questions</legend>
+            <div class="qcm-choices qcm-choices-inline" id="qcm-count-choices"></div>
+          </fieldset>
+
+          <p class="qcm-setup-summary" id="qcm-setup-summary" aria-live="polite"></p>
+
+          <button type="submit" class="qcm-btn qcm-btn-primary">Commencer le QCM</button>
+        </form>
+      </section>
+
+      <!-- Écran 2 : question en cours -->
+      <section id="qcm-session" class="qcm-screen" aria-labelledby="qcm-question-text" hidden="hidden">
+        <div class="qcm-progress">
+          <p class="qcm-progress-label" id="qcm-progress-label"></p>
+          <div class="qcm-progress-track" aria-hidden="true">
+            <div class="qcm-progress-fill" id="qcm-progress-fill"></div>
+          </div>
+          <p class="qcm-progress-score" id="qcm-progress-score"></p>
+        </div>
+
+        <form id="qcm-question-form" class="qcm-card">
+          <div class="question-badges" id="qcm-question-badges"></div>
+
+          <fieldset class="qcm-fieldset">
+            <legend class="qcm-question-legend">
+              <span id="qcm-question-text" class="qcm-question-text" tabindex="-1"></span>
+              <span id="qcm-question-hint" class="qcm-question-hint"></span>
+            </legend>
+            <div class="qcm-options" id="qcm-options"></div>
+          </fieldset>
+
+          <div id="qcm-feedback" class="qcm-feedback" tabindex="-1" hidden="hidden"></div>
+
+          <div class="qcm-actions">
+            <button type="button" id="qcm-quit" class="btn-reset-filters">Arrêter</button>
+            <button type="submit" id="qcm-submit" class="qcm-btn qcm-btn-primary">Valider</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Écran 3 : résultats -->
+      <section id="qcm-results" class="qcm-screen" aria-labelledby="qcm-results-title" hidden="hidden">
+        <h2 id="qcm-results-title" class="qcm-screen-title" tabindex="-1">Mon résultat</h2>
+
+        <div class="qcm-card qcm-score">
+          <p class="qcm-score-value" id="qcm-score-value"></p>
+          <div>
+            <p class="qcm-score-level" id="qcm-score-level"></p>
+            <p class="qcm-score-message" id="qcm-score-message"></p>
+          </div>
+        </div>
+
+        <div class="qcm-card">
+          <h3 class="qcm-card-title">Détail par bloc</h3>
+          <table class="qcm-table">
+            <caption class="sr-only">Bonnes réponses par bloc de compétences</caption>
+            <thead>
+              <tr>
+                <th scope="col">Bloc</th>
+                <th scope="col">Bonnes réponses</th>
+                <th scope="col">Taux</th>
+              </tr>
+            </thead>
+            <tbody id="qcm-bloc-breakdown"></tbody>
+          </table>
+        </div>
+
+        <div class="qcm-card" id="qcm-mistakes-card">
+          <h3 class="qcm-card-title" id="qcm-mistakes-title">À revoir</h3>
+          <div id="qcm-mistakes" class="qcm-mistakes"></div>
+        </div>
+
+        <div class="qcm-actions qcm-actions-results">
+          <button type="button" id="qcm-retry-mistakes" class="btn-reset-filters">Refaire mes erreurs</button>
+          <button type="button" id="qcm-restart" class="qcm-btn qcm-btn-primary">Nouveau QCM</button>
+        </div>
+      </section>
+
+      <p class="sr-only" id="qcm-announcer" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="qcm-footer-text">QCM d'entraînement pour préparer votre soutenance RNCP6 CDA</p>
+        <p class="referentiel-note">
+          Basé sur le référentiel d'évaluation TP-01281 — Concepteur développeur d'applications, niveau 6,
+          millésime 04 (arrêté du 26/04/2023, mis à jour le 02/07/2024).
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
